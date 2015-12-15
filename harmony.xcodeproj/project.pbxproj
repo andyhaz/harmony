@@ -14,6 +14,9 @@
 		972B39381C20CF5800A6D716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972B39361C20CF5800A6D716 /* Main.storyboard */; };
 		972B39431C20CF5900A6D716 /* harmonyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B39421C20CF5900A6D716 /* harmonyTests.m */; };
 		972B394E1C20CF5900A6D716 /* harmonyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B394D1C20CF5900A6D716 /* harmonyUITests.m */; };
+		972B395D1C20DA7B00A6D716 /* myView.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B395C1C20DA7B00A6D716 /* myView.m */; };
+		972B39601C20DA9B00A6D716 /* myControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B395F1C20DA9B00A6D716 /* myControl.m */; };
+		972B39631C20DABA00A6D716 /* shareControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B39621C20DABA00A6D716 /* shareControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		972B39491C20CF5900A6D716 /* harmonyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harmonyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		972B394D1C20CF5900A6D716 /* harmonyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = harmonyUITests.m; sourceTree = "<group>"; };
 		972B394F1C20CF5900A6D716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		972B395B1C20DA7B00A6D716 /* myView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myView.h; sourceTree = "<group>"; };
+		972B395C1C20DA7B00A6D716 /* myView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myView.m; sourceTree = "<group>"; };
+		972B395E1C20DA9B00A6D716 /* myControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myControl.h; sourceTree = "<group>"; };
+		972B395F1C20DA9B00A6D716 /* myControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myControl.m; sourceTree = "<group>"; };
+		972B39611C20DABA00A6D716 /* shareControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareControl.h; sourceTree = "<group>"; };
+		972B39621C20DABA00A6D716 /* shareControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,12 @@
 				972B392C1C20CF5800A6D716 /* AppDelegate.m */,
 				972B39311C20CF5800A6D716 /* ViewController.h */,
 				972B39321C20CF5800A6D716 /* ViewController.m */,
+				972B395B1C20DA7B00A6D716 /* myView.h */,
+				972B395C1C20DA7B00A6D716 /* myView.m */,
+				972B395E1C20DA9B00A6D716 /* myControl.h */,
+				972B395F1C20DA9B00A6D716 /* myControl.m */,
+				972B39611C20DABA00A6D716 /* shareControl.h */,
+				972B39621C20DABA00A6D716 /* shareControl.m */,
 				972B39341C20CF5800A6D716 /* Assets.xcassets */,
 				972B39361C20CF5800A6D716 /* Main.storyboard */,
 				972B39391C20CF5800A6D716 /* Info.plist */,
@@ -204,6 +219,7 @@
 				TargetAttributes = {
 					972B39271C20CF5800A6D716 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7QPZTLEJ7L;
 					};
 					972B393D1C20CF5900A6D716 = {
 						CreatedOnToolsVersion = 7.2;
@@ -266,8 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				972B395D1C20DA7B00A6D716 /* myView.m in Sources */,
 				972B39331C20CF5800A6D716 /* ViewController.m in Sources */,
 				972B39301C20CF5800A6D716 /* main.m in Sources */,
+				972B39631C20DABA00A6D716 /* shareControl.m in Sources */,
+				972B39601C20DA9B00A6D716 /* myControl.m in Sources */,
 				972B392D1C20CF5800A6D716 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = harmony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -410,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = harmony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
