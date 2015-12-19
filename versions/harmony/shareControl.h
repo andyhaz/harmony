@@ -10,4 +10,7 @@
 
 @interface shareControl : NSObject
 
+- (NSString *)returnNTextField;
+- (void)assignStringToTextField:(NSString *)pString;
+
 @end

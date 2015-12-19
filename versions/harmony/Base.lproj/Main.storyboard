@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
@@ -676,14 +675,23 @@
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-XQ-cNZ">
                                 <rect key="frame" x="54" y="70" width="44" height="23"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="textColorWell:" target="YgC-dO-nlc" id="2z6-rr-ae5"/>
+                                </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5G-Oo-uhu">
                                 <rect key="frame" x="54" y="40" width="44" height="23"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sationColorWell:" target="YgC-dO-nlc" id="Cf3-SI-7Ac"/>
+                                </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u17-3u-BL4">
                                 <rect key="frame" x="54" y="9" width="44" height="23"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="backgoundColorWell:" target="YgC-dO-nlc" id="o1X-l6-VKn"/>
+                                </connections>
                             </colorWell>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-D3-zn1">
                                 <rect key="frame" x="106" y="70" width="96" height="22"/>
@@ -773,7 +781,18 @@
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="YgC-dO-nlc" customClass="myControl"/>
+                <customObject id="YgC-dO-nlc" customClass="myControl">
+                    <connections>
+                        <outlet property="BGTextFieldOutlet" destination="nWw-D3-zn1" id="WPA-WN-9lc"/>
+                        <outlet property="SationTextFieldOutlet" destination="XSg-t4-XDn" id="20v-ka-qmy"/>
+                        <outlet property="TextFieldOutlet" destination="C8f-Sm-qeo" id="Q1k-0g-MaW"/>
+                        <outlet property="colorWellBackground" destination="u17-3u-BL4" id="Jgh-gK-1hs"/>
+                        <outlet property="colorWellSation" destination="V5G-Oo-uhu" id="DwQ-oN-QwH"/>
+                        <outlet property="colorWellText" destination="gP3-XQ-cNZ" id="day-3s-Vfd"/>
+                        <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="aDW-Fh-tZ4"/>
+                        <outlet property="myTextFieldOutlet" destination="XSg-t4-XDn" id="Jlf-SI-dAQ"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="75" y="707.5"/>
         </scene>

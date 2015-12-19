@@ -10,4 +10,13 @@
 
 @implementation shareControl
 
+- (NSString *)returnNTextField {
+    NSLog(@"returnNTextField");
+    return(@"string from MyDummyControl");
+} // end returnNTextField
+
+- (void)assignStringToTextField:(NSString *)pString {
+    NSLog(@"MyDummyControl %@",pString);
+} // end assignStringToTextField
+
 @end
