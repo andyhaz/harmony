@@ -12,8 +12,10 @@
 
 @interface myView : NSView {
     IBOutlet id myControlObj;
+    IBOutlet id myControlObj2;
+    IBOutlet id myControlObj3;
     
-    NSString *myString;
+    NSString *myTextString,*myBackgoundString;
     
     float myRedText;
     float myGreenText;
@@ -32,7 +34,7 @@
 }
 
 -(void)textColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
--(void)stainColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
+-(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 -(void)bgColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 
 @end

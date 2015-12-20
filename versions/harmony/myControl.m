@@ -15,48 +15,75 @@
 - (id)init {
     self = [super init];
     if (self) {
-        NSLog(@"init");
+      //  NSLog(@"init");
         [myCustomViewObjOutlet bgColor:0.0 :0.0 :1.0 :1.0];
-        
     }
     return self;
 }
 
 - (IBAction)textColorWell:(id)pId{
-    NSColorWell *well = colorWellBackground;
-    float myRedBG = well.color.redComponent;
-    float myGreenBG = well.color.greenComponent;
-    float myBlueBG = well.color.blueComponent;
-    float myAlphaBG = well.color.alphaComponent;
+    NSColorWell *well = colorWellText;
+    float myRed = well.color.redComponent;
+    float myGreen = well.color.greenComponent;
+    float myBlue = well.color.blueComponent;
+    float myAlpha = well.color.alphaComponent;
     
-    [myCustomViewObjOutlet textColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
+    [myCustomViewObjOutlet textColor:myRed :myGreen :myBlue :myAlpha];
 }
 
 - (IBAction)sationColorWell:(id)pId{
+    NSColorWell *well = colorWellBackground;
+    float myRed = well.color.redComponent;
+    float myGreen = well.color.greenComponent;
+    float myBlue = well.color.blueComponent;
+    float myAlpha = well.color.alphaComponent;
     
+    [myCustomViewObjOutlet outlineColor:myRed :myGreen :myBlue :myAlpha];
 }
 
 - (IBAction)backgoundColorWell:(id)pId{
     NSColorWell *well = colorWellBackground;
-    float myRedBG = well.color.redComponent;
-    float myGreenBG = well.color.greenComponent;
-    float myBlueBG = well.color.blueComponent;
-    float myAlphaBG = well.color.alphaComponent;
+    float myRed = well.color.redComponent;
+    float myGreen = well.color.greenComponent;
+    float myBlue = well.color.blueComponent;
+    float myAlpha = well.color.alphaComponent;
     
-    [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
+    [myCustomViewObjOutlet bgColor:myRed :myGreen :myBlue :myAlpha];
     //NSLog(@"new bg Color:%@",colorWell3.color);
 }
 
 - (NSString *)returnNTextField {
     NSString * zString = [myTextFieldOutlet stringValue];
-    //  NSLog(@"return text: %@",zString);
+ //   NSLog(@"return text: %@",zString);
     return zString;
-} // end returnNTextField
+}//end returnNTextField
+
+- (NSString *)returnNOutlineField {
+    NSString * zString = [myStaOutlet stringValue];
+    //   NSLog(@"return text: %@",zString);
+    return zString;
+}//end returnNTextField
+
+- (NSString *)returnNBGField {
+    NSString * zString = [myBackgoundOutlet stringValue];
+    //   NSLog(@"return text: %@",zString);
+    return zString;
+}//end returnNTextField
 
 - (void)assignStringToTextField:(NSString *)pString {
-    //   NSLog(@"assign string");
+    NSLog(@"assign string A");
     [myTextFieldOutlet setStringValue:pString];
-} // end assignStringToTextField
+}//end assignStringToTextField
+
+- (void)assignStringToOutlinField:(NSString *)pString {
+    NSLog(@"assign string B");
+    [myStaOutlet setStringValue:pString];
+}//end assignStringToTextField
+
+- (void)assignStringToBGField:(NSString *)pString {
+    NSLog(@"assign string C");
+    [myBackgoundOutlet setStringValue:pString];
+}//end assignStringToTextField
 
 
 @end

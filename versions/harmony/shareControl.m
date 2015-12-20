@@ -12,11 +12,26 @@
 
 - (NSString *)returnNTextField {
     NSLog(@"returnNTextField");
-    return(@"string from MyDummyControl");
+    return(@"string from shareControl");
 } // end returnNTextField
 
+- (NSString *)returnNOutlineField{
+    return(@"string from shareControl");
+}
+- (NSString *)returnNBGField{
+    return(@"string from shareControl");
+}
+
 - (void)assignStringToTextField:(NSString *)pString {
-    NSLog(@"MyDummyControl %@",pString);
+    NSLog(@"shareControl %@",pString);
+} // end assignStringToTextField
+
+- (void)assignStringToOutlineField:(NSString *)pString {
+    NSLog(@"shareControl %@",pString);
+} // end assignStringToTextField
+
+- (void)assignStringToBGField:(NSString *)pString {
+    NSLog(@"shareControl %@",pString);
 } // end assignStringToTextField
 
 @end

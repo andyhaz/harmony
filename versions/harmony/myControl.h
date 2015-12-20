@@ -11,13 +11,14 @@
 
 @interface myControl : NSObject{
     IBOutlet myView *myCustomViewObjOutlet;
+    
     IBOutlet NSTextField *BGTextFieldOutlet;
     IBOutlet NSTextField *TextFieldOutlet;
     IBOutlet NSTextField *SationTextFieldOutlet;
     
     IBOutlet NSTextField *myTextFieldOutlet;
-
-
+    IBOutlet NSTextField *myBackgoundOutlet;
+    IBOutlet NSTextField *myStaOutlet;
 }
 
 - (IBAction)textColorWell:(id)pId;
@@ -29,6 +30,11 @@
 @property (weak) IBOutlet NSColorWell *colorWellBackground;
 
 - (NSString *)returnNTextField;
+- (NSString *)returnNOutlineField;
+- (NSString *)returnNBGField;
+
 - (void)assignStringToTextField:(NSString *)pString;
+- (void)assignStringToOutlinField:(NSString *)pString;
+- (void)assignStringToBGField:(NSString *)pString;
 
 @end
