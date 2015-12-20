@@ -60,7 +60,7 @@
 
 - (NSString *)returnNOutlineField {
     NSString * zString = [myStaOutlet stringValue];
-    //   NSLog(@"return text: %@",zString);
+    NSLog(@"return text: %@",zString);
     return zString;
 }//end returnNTextField
 

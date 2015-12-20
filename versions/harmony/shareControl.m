@@ -18,6 +18,7 @@
 - (NSString *)returnNOutlineField{
     return(@"string from shareControl");
 }
+
 - (NSString *)returnNBGField{
     return(@"string from shareControl");
 }
