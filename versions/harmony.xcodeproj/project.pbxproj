@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		972B39281C20CF5800A6D716 /* harmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		972B39281C20CF5800A6D716 /* Harmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972B392B1C20CF5800A6D716 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		972B392C1C20CF5800A6D716 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		972B392F1C20CF5800A6D716 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		972B39291C20CF5800A6D716 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				972B39281C20CF5800A6D716 /* harmony.app */,
+				972B39281C20CF5800A6D716 /* Harmony.app */,
 				972B393E1C20CF5900A6D716 /* harmonyTests.xctest */,
 				972B39491C20CF5900A6D716 /* harmonyUITests.xctest */,
 			);
@@ -169,7 +169,7 @@
 			);
 			name = harmony;
 			productName = harmony;
-			productReference = 972B39281C20CF5800A6D716 /* harmony.app */;
+			productReference = 972B39281C20CF5800A6D716 /* Harmony.app */;
 			productType = "com.apple.product-type.application";
 		};
 		972B393D1C20CF5900A6D716 /* harmonyTests */ = {
@@ -421,9 +421,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = harmony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamerocketstudio.harmony;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Harmony;
 			};
 			name = Debug;
 		};
@@ -435,9 +435,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = harmony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamerocketstudio.harmony;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Harmony;
 			};
 			name = Release;
 		};

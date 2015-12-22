@@ -77,9 +77,10 @@
     zPoint.x	= 30.0;
     zPoint.y	= 50.0;
     //set background color
-   // NSColor *bgColor = [NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG];
+   //NSColor *bgColor = [NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG];
     NSColor *textColor = [NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText];
   //  NSColor *outlineColor = [NSColor colorWithSRGBRed:myRedObj green:myGreenObj blue:myBlueObj alpha:myAlphaObj];
+    
    [[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG] setFill];
     NSRectFill( dirtyRect );
    //disply text
@@ -88,14 +89,28 @@
                                     traits:NSUnboldFontMask
                                     weight:0
                                     size:40];
-   
+    
+ //   NSFont *font =  [NSFont fontWithName:@"Arial" size:14];
+ //   CGPoint point = CGPointMake(0,0);
+   // CGContextRef windowContext = [[NSGraphicsContext currentContext] graphicsPort];
+    
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+  //CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 0.7);
+    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
+    CGContextSetTextDrawingMode(context, kCGTextFillStroke);
+  //[zString drawAtPoint:point withFont:textFont];
+
     NSMutableDictionary *zDictAttributes = [[NSMutableDictionary alloc] init];
+   // self.strokeSize > 0.0 && ![self.strokeColor isEqual:[UIColor clearColor]];
+
     [zDictAttributes setObject:textFont
                      forKey:NSFontAttributeName];
     
+    
     [zDictAttributes setObject:textColor
                      forKey:NSForegroundColorAttributeName];
-    
+    CGContextSaveGState(context);
+
     [zString drawAtPoint:zPoint withAttributes:zDictAttributes];
 
     // Create a grayscale context for the mask
@@ -118,11 +133,7 @@
      flipped:NO];
     [NSGraphicsContext saveGraphicsState];
     [NSGraphicsContext setCurrentContext:maskGraphicsContext];
-    
-    
-
- 
- /*
+/*
     //Draw a black background
      [bgColor setFill];
      CGContextFillRect(maskContext, dirtyRect);
@@ -133,8 +144,6 @@
       [NSFont fontWithName:@"Helvetica" size:40], NSFontAttributeName,
       [NSColor whiteColor], NSForegroundColorAttributeName,
       nil]];
-    
-
 
     //Switch back to the window's context
     [NSGraphicsContext restoreGraphicsState];
