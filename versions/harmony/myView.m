@@ -17,8 +17,7 @@
     myBlueText = blueBG;
     myAlphaText = alphaBG;
     
-  //  [myControlObj assignStringToTextField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
-    //[self setMyString: [myControlObj returnNTextField]];
+    [ViewControlObject assignStringToTextField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
     
     [self setNeedsDisplay:YES];
     
@@ -44,11 +43,10 @@
     myBlueBG = blueBG;
     myAlphaBG = alphaBG;
     
- //   [myControlObj3 assignStringToBGField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaText]]]];
+    [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaText]]]];
 //    [self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];
-   // NSLog(@"set background Color %f",redBG);
 }
 
 //color

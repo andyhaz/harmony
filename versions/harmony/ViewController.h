@@ -10,11 +10,12 @@
 #import "myView.h"
 #import "LoadSaveInterface.h"
 
+
 @interface ViewController : NSViewController {
     IBOutlet myView *myCustomViewObjOutlet;
     
-    IBOutlet NSTextField *TextFieldOutlet;
-    IBOutlet NSTextField *BGTextFieldOutlet;
+  //del  IBOutlet NSTextField *TextFieldOutlet;
+  //del  IBOutlet NSTextField *BGTextFieldOutlet;
     
     IBOutlet NSTextField *myTextFieldOutlet;
     IBOutlet NSTextField *myBackgoundOutlet;
@@ -28,8 +29,8 @@
 - (IBAction)OpenMenu:(id)sender;
 - (IBAction)SaveMenu:(id)sender;
 
-@property (weak) IBOutlet NSTextField *textInfoField;
-@property (weak) IBOutlet NSTextField *bgInfoField;
+ @property (weak) IBOutlet NSTextField *textInfoFieldOutlet;
+ @property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
 
 @property (weak) IBOutlet NSColorWell *colorWellText;
 //@property (weak) IBOutlet NSColorWell *colorWellSation;

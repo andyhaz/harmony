@@ -11,8 +11,8 @@
 #import "shareControl.h"
 
 @interface myView : NSView {
- //   IBOutlet id myControlObj;
- //   IBOutlet id myControlObj2;
+   IBOutlet id ViewControlObject;
+   IBOutlet id ViewControlObjectB;
  //   IBOutlet id myControlObj3;
     
     NSString *myTextString,*myBackgoundString;

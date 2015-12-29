@@ -433,19 +433,26 @@
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-r2-Kn1" customClass="myView">
                                 <rect key="frame" x="0.0" y="82" width="227" height="134"/>
+                                <connections>
+                                    <outlet property="ViewControlObject" destination="YgC-dO-nlc" id="iUf-hO-RTB"/>
+                                    <outlet property="ViewControlObjectB" destination="YgC-dO-nlc" id="VCY-Hb-6e2"/>
+                                </connections>
                             </customView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="bgInfoField" destination="XSg-t4-XDn" id="CbM-0i-1t8"/>
                         <outlet property="colorWellBackground" destination="u17-3u-BL4" id="xei-Fu-MMh"/>
                         <outlet property="colorWellText" destination="gP3-XQ-cNZ" id="PgW-jN-Z1J"/>
                         <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="KKF-tO-1Hj"/>
-                        <outlet property="textInfoField" destination="nWw-D3-zn1" id="yi1-Is-uwP"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="YgC-dO-nlc" customClass="ViewController"/>
+                <customObject id="YgC-dO-nlc" customClass="ViewController">
+                    <connections>
+                        <outlet property="myBackgoundOutlet" destination="XSg-t4-XDn" id="p8b-5N-5TN"/>
+                        <outlet property="myTextFieldOutlet" destination="nWw-D3-zn1" id="8cJ-mK-Bqv"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="75" y="631"/>
         </scene>

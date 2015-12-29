@@ -19,7 +19,7 @@
 
 @implementation ViewController
 
-@synthesize colorWellBackground,colorWellText,infoStr,textInfoField,bgInfoField,colorData;
+@synthesize colorData,colorWellBackground,colorWellText,textInfoFieldOutlet,bgInfoFieldOutlet;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,9 +29,9 @@
   //  myView *view = [[myView alloc] init];
     [myCustomViewObjOutlet textColor:1.0 :1.0 :1.0 :1.0];
     [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
-    
-    [textInfoField setStringValue:@"TextColer"];
-    [bgInfoField setStringValue:@"BackgoundColor"];
+ 
+  //  [textInfoField setStringValue:@"TextColer"];
+  //  [bgInfoField setStringValue:@"BackgoundColor"];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -108,28 +108,27 @@ float myBlueText = [[colorData objectAtIndex:2] floatValue];
     
 } // end
 
-//
+- (void)assignStringToTextField:(NSString *)pString {
+    NSLog(@"assign string A");
+    [colorData addObject:pString];
+    [myTextFieldOutlet setStringValue:pString];
+}//end assignStringToTextField
+
 - (NSString *)returnNTextField {
     NSString * zString = [myTextFieldOutlet stringValue];
-    //NSLog(@"return text: %@",zString);
+   // NSLog(@"return text: %@",zString);
     return zString;
 }//end returnNTextField
+//
+- (void)assignStringToBGField:(NSString *)pString {
+    //NSLog(@"assign string C");
+    [myBackgoundOutlet setStringValue:pString];
+}//end assignStringToTextField
 
 - (NSString *)returnNBGField {
     NSString * zString = [myBackgoundOutlet stringValue];
     //NSLog(@"return text: %@",zString);
     return zString;
 }//end returnNTextField
-
-- (void)assignStringToTextField:(NSString *)pString {
-    //NSLog(@"assign string A");
-    [colorData addObject:pString];
-    [myTextFieldOutlet setStringValue:pString];
-}//end assignStringToTextField
-
-- (void)assignStringToBGField:(NSString *)pString {
-    //NSLog(@"assign string C");
-    [myBackgoundOutlet setStringValue:pString];
-}//end assignStringToTextField
 
 @end
