@@ -11,9 +11,9 @@
 #import "shareControl.h"
 
 @interface myView : NSView {
-    IBOutlet id myControlObj;
-    IBOutlet id myControlObj2;
-    IBOutlet id myControlObj3;
+ //   IBOutlet id myControlObj;
+ //   IBOutlet id myControlObj2;
+ //   IBOutlet id myControlObj3;
     
     NSString *myTextString,*myBackgoundString;
     
@@ -36,5 +36,7 @@
 -(void)textColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 -(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 -(void)bgColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
+
+- (NSString *)getHexStringForColor:(NSColor*)color;
 
 @end

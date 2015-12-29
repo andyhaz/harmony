@@ -6,10 +6,13 @@
 //  Copyright © 2015 andrew hazlett. All rights reserved.
 //
 #import <Cocoa/Cocoa.h>
-//#import <Foundation/Foundation.h>
 #import "myView.h"
+#import "LoadSaveInterface.h"
 
-@interface myControl : NSObject{
+#import "ViewController.h"
+
+@interface myControl : NSObject {
+/*
     IBOutlet myView *myCustomViewObjOutlet;
     
     IBOutlet NSTextField *BGTextFieldOutlet;
@@ -19,11 +22,17 @@
     IBOutlet NSTextField *myTextFieldOutlet;
     IBOutlet NSTextField *myBackgoundOutlet;
     IBOutlet NSTextField *myStaOutlet;
+    
+    ViewController *vc;
+ */
 }
-
+/*
 - (IBAction)textColorWell:(id)pId;
 - (IBAction)sationColorWell:(id)pId;
 - (IBAction)backgoundColorWell:(id)pId;
+
+- (IBAction)doSaveAs:(id)pId;
+- (IBAction)doOpen:(id)pId;
 
 @property (weak) IBOutlet NSColorWell *colorWellText;
 @property (weak) IBOutlet NSColorWell *colorWellSation;
@@ -37,4 +46,7 @@
 - (void)assignStringToOutlinField:(NSString *)pString;
 - (void)assignStringToBGField:(NSString *)pString;
 
+
+@property (weak) NSString *infoStr;
+*/
 @end

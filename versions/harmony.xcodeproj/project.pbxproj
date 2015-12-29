@@ -16,6 +16,7 @@
 		972B394E1C20CF5900A6D716 /* harmonyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B394D1C20CF5900A6D716 /* harmonyUITests.m */; };
 		972B39601C20DA9B00A6D716 /* myControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B395F1C20DA9B00A6D716 /* myControl.m */; };
 		972B39631C20DABA00A6D716 /* shareControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B39621C20DABA00A6D716 /* shareControl.m */; };
+		9799A89A1C2AB1290076374A /* LoadSaveInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9799A8991C2AB1290076374A /* LoadSaveInterface.m */; };
 		97D528401C2612C800500231 /* myView.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B395C1C20DA7B00A6D716 /* myView.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		972B395F1C20DA9B00A6D716 /* myControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myControl.m; sourceTree = "<group>"; };
 		972B39611C20DABA00A6D716 /* shareControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareControl.h; sourceTree = "<group>"; };
 		972B39621C20DABA00A6D716 /* shareControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareControl.m; sourceTree = "<group>"; };
+		9799A8981C2AB1290076374A /* LoadSaveInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadSaveInterface.h; sourceTree = "<group>"; };
+		9799A8991C2AB1290076374A /* LoadSaveInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadSaveInterface.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 		972B392A1C20CF5800A6D716 /* harmony */ = {
 			isa = PBXGroup;
 			children = (
+				9799A8981C2AB1290076374A /* LoadSaveInterface.h */,
+				9799A8991C2AB1290076374A /* LoadSaveInterface.m */,
 				972B392B1C20CF5800A6D716 /* AppDelegate.h */,
 				972B392C1C20CF5800A6D716 /* AppDelegate.m */,
 				972B39311C20CF5800A6D716 /* ViewController.h */,
@@ -283,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				972B39331C20CF5800A6D716 /* ViewController.m in Sources */,
+				9799A89A1C2AB1290076374A /* LoadSaveInterface.m in Sources */,
 				972B39301C20CF5800A6D716 /* main.m in Sources */,
 				972B39631C20DABA00A6D716 /* shareControl.m in Sources */,
 				972B39601C20DA9B00A6D716 /* myControl.m in Sources */,

@@ -7,9 +7,42 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "myView.h"
+#import "LoadSaveInterface.h"
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController {
+    IBOutlet myView *myCustomViewObjOutlet;
+    
+    IBOutlet NSTextField *TextFieldOutlet;
+    IBOutlet NSTextField *BGTextFieldOutlet;
+    
+    IBOutlet NSTextField *myTextFieldOutlet;
+    IBOutlet NSTextField *myBackgoundOutlet;
+}
 
+//@property (weak) IBOutlet NSTextField *textFeildOutlet;
+
+- (IBAction)textColorWell:(id)pId;
+- (IBAction)backgoundColorWell:(id)pId;
+
+- (IBAction)OpenMenu:(id)sender;
+- (IBAction)SaveMenu:(id)sender;
+
+@property (weak) IBOutlet NSTextField *textInfoField;
+@property (weak) IBOutlet NSTextField *bgInfoField;
+
+@property (weak) IBOutlet NSColorWell *colorWellText;
+//@property (weak) IBOutlet NSColorWell *colorWellSation;
+@property (weak) IBOutlet NSColorWell *colorWellBackground;
+
+- (NSString *)returnNTextField;
+- (NSString *)returnNBGField;
+
+- (void)assignStringToTextField:(NSString *)pString;
+- (void)assignStringToBGField:(NSString *)pString;
+
+
+@property (weak) NSString *infoStr;
 
 @end
 

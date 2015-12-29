@@ -11,9 +11,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="harmony" id="1Xt-HY-uBw">
+                            <menuItem title="Harmony" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="harmony" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Harmony" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About harmony" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -64,7 +64,7 @@
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                             <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
+                                                <action selector="OpenMenu:" target="Ady-hI-5gd" id="jHt-kE-osq"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open Recent" id="tXI-mr-wws">
@@ -88,7 +88,7 @@
                                         </menuItem>
                                         <menuItem title="Save…" keyEquivalent="s" id="pxx-59-PXV">
                                             <connections>
-                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="teZ-XB-qJY"/>
+                                                <action selector="SaveMenu:" target="Ady-hI-5gd" id="aYY-lH-zzs"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
@@ -354,7 +354,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
+                <customObject id="Voe-Tx-rLC" customClass="ViewController"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -387,16 +387,16 @@
                         <subviews>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-XQ-cNZ">
                                 <rect key="frame" x="54" y="51" width="44" height="23"/>
-                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="textColorWell:" target="YgC-dO-nlc" id="2z6-rr-ae5"/>
+                                    <action selector="textColorWell:" target="XfG-lQ-9wD" id="7hJ-Oq-QfW"/>
                                 </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u17-3u-BL4">
                                 <rect key="frame" x="54" y="18" width="44" height="23"/>
-                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="backgoundColorWell:" target="YgC-dO-nlc" id="o1X-l6-VKn"/>
+                                    <action selector="backgoundColorWell:" target="XfG-lQ-9wD" id="vxl-vd-fCl"/>
                                 </connections>
                             </colorWell>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-D3-zn1">
@@ -433,27 +433,19 @@
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-r2-Kn1" customClass="myView">
                                 <rect key="frame" x="0.0" y="82" width="227" height="134"/>
-                                <connections>
-                                    <outlet property="myControlObj" destination="YgC-dO-nlc" id="buR-dX-nRi"/>
-                                    <outlet property="myControlObj2" destination="YgC-dO-nlc" id="dqt-Ni-GK7"/>
-                                    <outlet property="myControlObj3" destination="YgC-dO-nlc" id="odu-uu-rS4"/>
-                                </connections>
                             </customView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="bgInfoField" destination="XSg-t4-XDn" id="CbM-0i-1t8"/>
+                        <outlet property="colorWellBackground" destination="u17-3u-BL4" id="xei-Fu-MMh"/>
+                        <outlet property="colorWellText" destination="gP3-XQ-cNZ" id="PgW-jN-Z1J"/>
+                        <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="KKF-tO-1Hj"/>
+                        <outlet property="textInfoField" destination="nWw-D3-zn1" id="yi1-Is-uwP"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="YgC-dO-nlc" customClass="myControl">
-                    <connections>
-                        <outlet property="BGTextFieldOutlet" destination="nWw-D3-zn1" id="WPA-WN-9lc"/>
-                        <outlet property="SationTextFieldOutlet" destination="XSg-t4-XDn" id="20v-ka-qmy"/>
-                        <outlet property="colorWellBackground" destination="u17-3u-BL4" id="Jgh-gK-1hs"/>
-                        <outlet property="colorWellText" destination="gP3-XQ-cNZ" id="day-3s-Vfd"/>
-                        <outlet property="myBackgoundOutlet" destination="XSg-t4-XDn" id="ctC-fx-esf"/>
-                        <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="aDW-Fh-tZ4"/>
-                        <outlet property="myTextFieldOutlet" destination="nWw-D3-zn1" id="OOE-rf-Ouj"/>
-                    </connections>
-                </customObject>
+                <customObject id="YgC-dO-nlc" customClass="ViewController"/>
             </objects>
             <point key="canvasLocation" x="75" y="631"/>
         </scene>
