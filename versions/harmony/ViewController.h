@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "myView.h"
 #import "LoadSaveInterface.h"
-
+#import "GRSxmlphares.h"
 
 @interface ViewController : NSViewController {
     IBOutlet myView *myCustomViewObjOutlet;

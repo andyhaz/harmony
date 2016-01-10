@@ -24,14 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0", nil];
-   // NSLog(@"init colorData%@",colorData);
-    // Do any additional setup after loading the view.
-  //  myView *view = [[myView alloc] init];
+   //NSLog(@"init colorData%@",colorData);
+   //Do any additional setup after loading the view.
+   //myView *view = [[myView alloc] init];
     [myCustomViewObjOutlet textColor:1.0 :1.0 :1.0 :1.0];
     [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
- 
-  //  [textInfoField setStringValue:@"TextColer"];
-  //  [bgInfoField setStringValue:@"BackgoundColor"];
+   //[textInfoField setStringValue:@"TextColer"];
+   //[bgInfoField setStringValue:@"BackgoundColor"];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -76,7 +75,11 @@
 - (IBAction)SaveMenu:(id)sender; {
     NSLog(@"saveMenu colorData:%@",colorData);
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
-    NSString *stringData = [colorData componentsJoinedByString:@","];
+    
+    GRSxmlphares *xml = [[GRSxmlphares alloc]init];
+    NSString *stringData = [xml saveXMLdata:colorData];
+    NSLog(@"xmlData:%@",stringData);
+   // NSString *stringData = [colorData componentsJoinedByString:@","];
     [lsi saveFileSata:stringData];
    // NSLog(@"save strData:%@",stringData);
 } // end
@@ -84,19 +87,18 @@
 - (IBAction)OpenMenu:(id)sender; {
     NSLog(@"openMenu");
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
+    GRSxmlphares *xml = [[GRSxmlphares alloc]init];
+
     NSString *stringData = [lsi loadFileData];
-    NSLog(@"load strData:%@",stringData);
+    NSLog(@"xmlData:%@",[xml loadXMLdata:stringData]);
     
-    NSArray *loadData = [stringData componentsSeparatedByString:@","];
-    
-    colorData = [[NSMutableArray alloc] initWithArray:loadData];
-    NSLog(@"load colorData:%@",colorData);
+    colorData = [[NSMutableArray alloc] initWithArray:[xml loadXMLdata:stringData]];
+    //NSLog(@"load colorData:%@",colorData);
     
     float myRedText = [[colorData objectAtIndex:0] floatValue];
     float myGreenText = [[colorData objectAtIndex:1] floatValue];
-float myBlueText = [[colorData objectAtIndex:2] floatValue];
+    float myBlueText = [[colorData objectAtIndex:2] floatValue];
     float myAlphaText = [[colorData objectAtIndex:3] floatValue];
-    
     float myRedBG = [[colorData objectAtIndex:4] floatValue];
     float myGreenBG = [[colorData objectAtIndex:5] floatValue];
     float myBlueBG = [[colorData objectAtIndex:6] floatValue];
@@ -104,12 +106,11 @@ float myBlueText = [[colorData objectAtIndex:2] floatValue];
     
     [myCustomViewObjOutlet textColor:myRedText :myGreenText :myBlueText :myAlphaText];
     [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
-    
-    
+  
 } // end
 
 - (void)assignStringToTextField:(NSString *)pString {
-    NSLog(@"assign string A");
+ //   NSLog(@"assign string A");
     [colorData addObject:pString];
     [myTextFieldOutlet setStringValue:pString];
 }//end assignStringToTextField
