@@ -13,10 +13,7 @@
 
 @interface ViewController : NSViewController {
     IBOutlet myView *myCustomViewObjOutlet;
-    
-  //del  IBOutlet NSTextField *TextFieldOutlet;
-  //del  IBOutlet NSTextField *BGTextFieldOutlet;
-    
+
     IBOutlet NSTextField *myTextFieldOutlet;
     IBOutlet NSTextField *myBackgoundOutlet;
 }

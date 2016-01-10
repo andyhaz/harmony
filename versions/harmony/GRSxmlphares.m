@@ -18,14 +18,12 @@
 
 -(NSMutableArray*)loadXMLdata :(NSString*)strData {
     NSMutableArray *xmlArray = [[NSMutableArray alloc]init];
-    
     // Parse the XML into a dictionary
     XMLphares *xmlInfo = [[XMLphares alloc]init];
     [xmlInfo parseXML :strData];
-    NSLog(@"xmlInfo:%@",xmlInfo);
-    
+  //  NSLog(@"xmlInfo:%@",xmlInfo);
     if (xmlInfo.version == 1.0) {
-        NSLog(@"version");
+     //   NSLog(@"version");
         NSNumber *redNum= [NSNumber numberWithFloat:xmlInfo.currentTextRed];
         [xmlArray addObject:redNum];
         NSNumber *blueNum= [NSNumber numberWithFloat:xmlInfo.currentTextBlue];
