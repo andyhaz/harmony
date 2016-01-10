@@ -24,7 +24,7 @@
     [xmlInfo parseXML :strData];
     NSLog(@"xmlInfo:%@",xmlInfo);
     
-    if (xmlInfo.version <= 1.0) {
+    if (xmlInfo.version == 1.0) {
         NSLog(@"version");
         NSNumber *redNum= [NSNumber numberWithFloat:xmlInfo.currentTextRed];
         [xmlArray addObject:redNum];
