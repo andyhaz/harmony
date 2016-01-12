@@ -64,6 +64,7 @@
 		9788548A1C424053004A5ED5 /* GRSxmlphares.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRSxmlphares.m; sourceTree = "<group>"; };
 		9799A8981C2AB1290076374A /* LoadSaveInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadSaveInterface.h; sourceTree = "<group>"; };
 		9799A8991C2AB1290076374A /* LoadSaveInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadSaveInterface.m; sourceTree = "<group>"; };
+		97FF2C7C1C4566CD006438BC /* Harmony.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Harmony.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 		972B392A1C20CF5800A6D716 /* harmony */ = {
 			isa = PBXGroup;
 			children = (
+				97FF2C7C1C4566CD006438BC /* Harmony.entitlements */,
 				978450091C4246EF0023A985 /* view */,
 				978450081C4246BF0023A985 /* class */,
 				972B392B1C20CF5800A6D716 /* AppDelegate.h */,
@@ -246,6 +248,11 @@
 					972B39271C20CF5800A6D716 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 7QPZTLEJ7L;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					972B393D1C20CF5900A6D716 = {
 						CreatedOnToolsVersion = 7.2;
@@ -445,12 +452,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = harmony/Harmony.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = harmony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamerocketstudio.harmony;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamerocketstudo.harmony;
 				PRODUCT_NAME = Harmony;
 			};
 			name = Debug;
@@ -459,12 +467,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = harmony/Harmony.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = harmony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamerocketstudio.harmony;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamerocketstudo.harmony;
 				PRODUCT_NAME = Harmony;
 			};
 			name = Release;
