@@ -72,6 +72,17 @@
     //NSLog(@"new bg Color:%@",colorWell3.color);
 }
 //handly menu
+- (IBAction)MeinMenuWindo:(id)sender{
+    NSLog(@"open mainWindow");//
+    
+    NSWindowController *winCon = [[NSWindowController alloc] initWithWindowNibName:@"mainWindow"];
+    [winCon showWindow:self];
+    
+    
+
+    
+}
+//handly menu
 - (IBAction)SaveMenu:(id)sender; {
     NSLog(@"saveMenu colorData:%@",colorData);
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];

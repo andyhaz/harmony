@@ -11,7 +11,7 @@
 #import "LoadSaveInterface.h"
 #import "GRSxmlphares.h"
 
-@interface ViewController : NSViewController {
+@interface ViewController : NSViewController {    
     IBOutlet myView *myCustomViewObjOutlet;
 
     IBOutlet NSTextField *myTextFieldOutlet;
@@ -25,6 +25,8 @@
 
 - (IBAction)OpenMenu:(id)sender;
 - (IBAction)SaveMenu:(id)sender;
+
+- (IBAction)MeinMenuWindo:(id)sender;
 
  @property (weak) IBOutlet NSTextField *textInfoFieldOutlet;
  @property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
