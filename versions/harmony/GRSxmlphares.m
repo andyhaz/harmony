@@ -21,9 +21,9 @@
     // Parse the XML into a dictionary
     XMLphares *xmlInfo = [[XMLphares alloc]init];
     [xmlInfo parseXML :strData];
-  //  NSLog(@"xmlInfo:%@",xmlInfo);
-    if (xmlInfo.version == 1.0) {
-     //   NSLog(@"version");
+  //  NSLog(@"xmlInfo:%f",xmlInfo.currentVersion);
+    if (xmlInfo.currentVersion == 1.0) {
+        NSLog(@"version");
         NSNumber *redNum= [NSNumber numberWithFloat:xmlInfo.currentTextRed];
         [xmlArray addObject:redNum];
         NSNumber *blueNum= [NSNumber numberWithFloat:xmlInfo.currentTextBlue];

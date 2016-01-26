@@ -159,10 +159,10 @@
 			children = (
 				9799A8981C2AB1290076374A /* LoadSaveInterface.h */,
 				9799A8991C2AB1290076374A /* LoadSaveInterface.m */,
-				978854861C42401C004A5ED5 /* XMLphares.h */,
-				978854871C42401C004A5ED5 /* XMLphares.m */,
 				978854891C424053004A5ED5 /* GRSxmlphares.h */,
 				9788548A1C424053004A5ED5 /* GRSxmlphares.m */,
+				978854861C42401C004A5ED5 /* XMLphares.h */,
+				978854871C42401C004A5ED5 /* XMLphares.m */,
 				972B39611C20DABA00A6D716 /* shareControl.h */,
 				972B39621C20DABA00A6D716 /* shareControl.m */,
 			);

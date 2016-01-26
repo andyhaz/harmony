@@ -34,11 +34,11 @@
 }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-    
+  //  NSLog(@"parser");
     if ([self.element isEqualToString:@"colorProfile"]) {
         self.currentAttributes = [self.attributes valueForKey:@"version"];
         self.currentVersion = self.currentAttributes.doubleValue;
-       // NSLog(@"current version %f", self.currentVersion);
+     //   NSLog(@"current version %f", self.currentVersion);
     } else if ([self.element isEqualToString:@"textred" ]) {
         self.currentTextRed = string.doubleValue;
       //  NSLog(@"red %f", self.currentTextRed);

@@ -103,6 +103,7 @@
     NSString *stringData = [lsi loadFileData];
     NSLog(@"xmlData:%@",[xml loadXMLdata:stringData]);
     
+    
     colorData = [[NSMutableArray alloc] initWithArray:[xml loadXMLdata:stringData]];
     //NSLog(@"load colorData:%@",colorData);
     
