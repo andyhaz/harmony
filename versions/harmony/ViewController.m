@@ -73,40 +73,55 @@
 }
 //handly menu
 - (IBAction)MeinMenuWindo:(id)sender{
-    NSLog(@"open mainWindow");//
-    
+  //  NSLog(@"open mainWindow");//
     NSWindowController *winCon = [[NSWindowController alloc] initWithWindowNibName:@"mainWindow"];
     [winCon showWindow:self];
-    
-    
-
-    
 }
 //handly menu
 - (IBAction)SaveMenu:(id)sender; {
-    NSLog(@"saveMenu colorData:%@",colorData);
+   // NSLog(@"saveMenu colorData:%@",colorData);
+//    colorUtitle *colorUtl = [[colorUtitle alloc]init];
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
+  //  GRSxmlphares *xml = [[GRSxmlphares alloc]init];
+   /* NSMutableArray *xmlAry = [[NSMutableArray alloc]init];
+    NSMutableArray *temp = [[NSMutableArray alloc]init];
+    //create the
+    [temp addObject:colorData[0]];
+    [temp addObject:colorData[1]];
+    [temp addObject:colorData[2]];
+    [temp addObject:colorData[3]];
+    NSColor *tc = [colorUtl colorFromHexArray:temp];
+    [temp removeAllObjects];
     
-    GRSxmlphares *xml = [[GRSxmlphares alloc]init];
-    NSString *stringData = [xml saveXMLdata:colorData];
-    NSLog(@"xmlData:%@",stringData);
-   // NSString *stringData = [colorData componentsJoinedByString:@","];
-    [lsi saveFileSata:stringData];
+    [temp addObject:colorData[4]];
+    [temp addObject:colorData[5]];
+    [temp addObject:colorData[6]];
+    [temp addObject:colorData[7]];
+    NSColor *bg = [colorUtl colorFromHexArray:temp];
+ 
+ //   NSLog(@"colorData:%@",colorData);
+    [xmlAry addObject:[colorUtl getHexStringForColor:tc]];
+    [xmlAry addObject:[colorUtl getHexStringForColor:bg]];*/
+   //  NSLog(@"colorAry:%@",colorAry);
+    
+   // NSString *stringData = [xml saveXMLdata:colorData];
+ //   NSLog(@"xmlData:%@",stringData);
+    
+    [lsi saveFiledata:colorData];
    // NSLog(@"save strData:%@",stringData);
 } // end
 
 - (IBAction)OpenMenu:(id)sender; {
-    NSLog(@"openMenu");
+  //  NSLog(@"openMenu");
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
-    GRSxmlphares *xml = [[GRSxmlphares alloc]init];
-
-    NSString *stringData = [lsi loadFileData];
-    NSLog(@"xmlData:%@",[xml loadXMLdata:stringData]);
+ //GRSxmlphares *xml = [[GRSxmlphares alloc]init];
+  //  NSString *stringData = [lsi loadFileData];
+    //NSLog(@"open xmlData:%@",[xml loadXMLdata:stringData]);
     
+    colorData = [[NSMutableArray alloc] initWithArray:[lsi loadFileData]];
+    NSLog(@"load colorData:%@",colorData);
     
-    colorData = [[NSMutableArray alloc] initWithArray:[xml loadXMLdata:stringData]];
-    //NSLog(@"load colorData:%@",colorData);
-    
+  
     float myRedText = [[colorData objectAtIndex:0] floatValue];
     float myGreenText = [[colorData objectAtIndex:1] floatValue];
     float myBlueText = [[colorData objectAtIndex:2] floatValue];
@@ -118,7 +133,6 @@
     
     [myCustomViewObjOutlet textColor:myRedText :myGreenText :myBlueText :myAlphaText];
     [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
-  
 } // end
 
 - (void)assignStringToTextField:(NSString *)pString {
@@ -140,8 +154,56 @@
 
 - (NSString *)returnNBGField {
     NSString * zString = [myBackgoundOutlet stringValue];
+  //  [myTextFieldOutlet out]
     //NSLog(@"return text: %@",zString);
     return zString;
 }//end returnNTextField
 
+- (IBAction)textAction:(id)sender {
+    NSString *textStr = [textInfoFieldOutlet stringValue];
+    colorUtitle *colorUtl = [[colorUtitle alloc]init];
+    NSColor *newColor =  [colorUtl colorFromHexString:textStr];
+    NSColorWell *well = colorWellText;
+
+    
+    float myRed = newColor.redComponent;
+    float myGreen = newColor.greenComponent;
+    float myBlue = newColor.blueComponent;
+    float myAlpha = newColor.alphaComponent;
+    
+    NSColor *newcolor = [NSColor colorWithCalibratedRed:myRed green:myGreen blue:myBlue alpha:myAlpha];
+    [well setColor:newcolor];
+    
+    [myCustomViewObjOutlet textColor:myRed :myGreen :myBlue :myAlpha];
+    
+    [colorData replaceObjectAtIndex:0 withObject:[NSString stringWithFormat:@"%f",myRed]];
+    [colorData replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%f",myGreen]];
+    [colorData replaceObjectAtIndex:2 withObject:[NSString stringWithFormat:@"%f",myBlue]];
+    [colorData replaceObjectAtIndex:3 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
+    
+  //  NSLog(@"text action:%@",newColor);
+}
+
+- (IBAction)bgAction:(id)sender {
+    NSString *textStr = [textInfoFieldOutlet stringValue];
+    colorUtitle *colorUtl = [[colorUtitle alloc]init];
+    NSColor *newColor =  [colorUtl colorFromHexString:textStr];
+    NSColorWell *well = colorWellBackground;
+
+    float myRed = newColor.redComponent;
+    float myGreen = newColor.greenComponent;
+    float myBlue = newColor.blueComponent;
+    float myAlpha = newColor.alphaComponent;
+    
+    NSColor *newcolor = [NSColor colorWithCalibratedRed:myRed green:myGreen blue:myBlue alpha:myAlpha];
+    [well setColor:newcolor];
+    
+    [myCustomViewObjOutlet bgColor:myRed :myGreen :myBlue :myAlpha];
+    
+    [colorData replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%f",myRed]];
+    [colorData replaceObjectAtIndex:5 withObject:[NSString stringWithFormat:@"%f",myGreen]];
+    [colorData replaceObjectAtIndex:6 withObject:[NSString stringWithFormat:@"%f",myBlue]];
+    [colorData replaceObjectAtIndex:7 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
+    //NSLog(@"bg action");
+}
 @end

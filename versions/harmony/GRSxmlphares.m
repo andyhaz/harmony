@@ -11,7 +11,7 @@
 @implementation GRSxmlphares
 
 -(NSString*)saveXMLdata :(NSMutableArray*)data {
-    NSString *xmlFormate = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?><colorProfile version=\"1.0\"> <textred>%f</textred> <textblue>%f</textblue> <textgreen>%f</textgreen><textalpha>%f</textalpha><bgred>%f</bgred><bgblue>%f</bgblue><bggreen>%f </bggreen><bgalpha>%f</bgalpha></colorProfile>",[data[0] doubleValue],[data[1] doubleValue],[data[2] doubleValue],[data[3] doubleValue],[data[4] doubleValue],[data[5] doubleValue],[data[6] doubleValue],[data[7] doubleValue]];
+    NSString *xmlFormate = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?><colorProfile version=\"1.0\"><textcolor>%@</textcolor><bgcolor>%@</bgcolor></colorProfile>",data[0],data[1]];
   //NSLog(@"%@",xmlFormate);
    return xmlFormate;
 }
@@ -21,28 +21,21 @@
     // Parse the XML into a dictionary
     XMLphares *xmlInfo = [[XMLphares alloc]init];
     [xmlInfo parseXML :strData];
-  //  NSLog(@"xmlInfo:%f",xmlInfo.currentVersion);
+    NSLog(@"xmlInfo:%f",xmlInfo.currentVersion);
     if (xmlInfo.currentVersion == 1.0) {
-        NSLog(@"version");
-        NSNumber *redNum= [NSNumber numberWithFloat:xmlInfo.currentTextRed];
-        [xmlArray addObject:redNum];
-        NSNumber *blueNum= [NSNumber numberWithFloat:xmlInfo.currentTextBlue];
-        [xmlArray addObject:blueNum];
-        NSNumber *greenNum= [NSNumber numberWithFloat:xmlInfo.currentTextGreen];
-        [xmlArray addObject:greenNum];
-        NSNumber *alphaNum= [NSNumber numberWithFloat:xmlInfo.currentTextAlpha];
-        [xmlArray addObject:alphaNum];
-        NSNumber *redBGNum= [NSNumber numberWithFloat:xmlInfo.currentBgRed];
-        [xmlArray addObject:redBGNum];
-        NSNumber *blueBGNum= [NSNumber numberWithFloat:xmlInfo.currentBgBlue];
-        [xmlArray addObject:blueBGNum];
-        NSNumber *greenBGNum= [NSNumber numberWithFloat:xmlInfo.currentBgGreen];
-        [xmlArray addObject:greenBGNum];
-        NSNumber *alphaBGNum= [NSNumber numberWithFloat:xmlInfo.currentBgAlpha];
-        [xmlArray addObject:alphaBGNum];
-    } else {
+      //  NSLog(@"version");
+        NSString *tcolor = xmlInfo.currentText;
+        NSLog(@"text color:%@",tcolor);
+        
+        [xmlArray addObject:tcolor];
+        NSString *bgcolor = xmlInfo.currentBackGround;
+        NSLog(@"BG color:%@",bgcolor);
+        
+        [xmlArray addObject:bgcolor];
+        } else {
         [xmlArray addObjectsFromArray:[strData componentsSeparatedByString:@","]];
     }
+    NSLog(@"loadXMLdata xmlArray:%@",xmlArray);
     return xmlArray;
 }
 @end

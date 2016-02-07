@@ -10,6 +10,7 @@
 #import "myView.h"
 #import "LoadSaveInterface.h"
 #import "GRSxmlphares.h"
+#import "colorUtitle.h"
 
 @interface ViewController : NSViewController {    
     IBOutlet myView *myCustomViewObjOutlet;
@@ -30,6 +31,8 @@
 
  @property (weak) IBOutlet NSTextField *textInfoFieldOutlet;
  @property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
+- (IBAction)textAction:(id)sender;
+- (IBAction)bgAction:(id)sender;
 
 @property (weak) IBOutlet NSColorWell *colorWellText;
 //@property (weak) IBOutlet NSColorWell *colorWellSation;
@@ -40,7 +43,6 @@
 
 - (void)assignStringToTextField:(NSString *)pString;
 - (void)assignStringToBGField:(NSString *)pString;
-
 
 @property (weak) NSString *infoStr;
 

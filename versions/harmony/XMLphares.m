@@ -23,7 +23,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     
-  //  NSLog(@"Element started:%@ attributes:%@",elementName,attributeDict);
+    NSLog(@"Element started:%@ attributes:%@",elementName,attributeDict);
     self.element = elementName;
     self.attributes = attributeDict;
 }
@@ -38,31 +38,13 @@
     if ([self.element isEqualToString:@"colorProfile"]) {
         self.currentAttributes = [self.attributes valueForKey:@"version"];
         self.currentVersion = self.currentAttributes.doubleValue;
-     //   NSLog(@"current version %f", self.currentVersion);
-    } else if ([self.element isEqualToString:@"textred" ]) {
-        self.currentTextRed = string.doubleValue;
+        NSLog(@"current version %f", self.currentVersion);
+    } else if ([self.element isEqualToString:@"textcolor" ]) {
+        self.currentText = string;
       //  NSLog(@"red %f", self.currentTextRed);
-    } else if ([self.element isEqualToString:@"textblue"]) {
-        self.currentTextBlue = string.doubleValue;
+    } else if ([self.element isEqualToString:@"bgcolor"]) {
+        self.currentBackGround = string;
       //  NSLog(@"blue %f", self.currentTextBlue);
-    } else if ([self.element isEqualToString:@"textgreen"]) {
-        self.currentTextGreen = string.doubleValue;
-       // NSLog(@"green %f", self.currentTextGreen);
-    } else if ([self.element isEqualToString:@"textalpha"]) {
-        self.currentTextAlpha = string.doubleValue;
-      //  NSLog(@"alpha %f", self.currentTextAlpha);
-    } else if ([self.element isEqualToString:@"bgred" ]) {
-        self.currentBgRed = string.doubleValue;
-      //  NSLog(@"bg red %f", self.currentBgRed);
-    } else if ([self.element isEqualToString:@"bgblue"]) {
-        self.currentTextBlue = string.doubleValue;
-      //  NSLog(@"bg blue %f", self.currentTextBlue);
-    } else if ([self.element isEqualToString:@"bggreen"]) {
-        self.currentBgGreen = string.doubleValue;
-      //  NSLog(@"bg green %f", self.currentBgGreen);
-    } else if ([self.element isEqualToString:@"bgalpha"]) {
-        self.currentBgAlpha = string.doubleValue;
-     //   NSLog(@"bg alpha %f", self.currentBgAlpha);
-    }
+    } 
 }
 @end

@@ -10,7 +10,7 @@
 
 @implementation LoadSaveInterface
 
--(void)saveFileSata :(NSString*)stringData{
+-(void)saveFiledata :(NSArray*)Data{
     // get the file url
     NSSavePanel * zSavePanel = [NSSavePanel savePanel];
     NSArray * zAryOfExtensions = [NSArray arrayWithObject:@"hcp"];
@@ -24,19 +24,22 @@
     }
     NSURL *zUrl = [zSavePanel URL];
     
-    NSString *writeData = [NSString stringWithFormat:@"%@",stringData];
+   // NSString *writeData = [NSString stringWithFormat:@"%@",stringData];
     //write
-    BOOL zBoolResult = [writeData writeToURL:zUrl
+    BOOL zBoolResult = [Data writeToURL:zUrl atomically:YES];
+    
+  /*  BOOL zBoolResult = [Data writeToURL:zUrl
                                   atomically:YES
                                     encoding:NSASCIIStringEncoding
-                                       error:NULL];
+                                       error:NULL];*/
     if (! zBoolResult) {
         NSLog(@"writeUsingSavePanel failed");
+        
     }
-    NSLog(@"zStr=\n%@",writeData);
+   // NSLog(@"saveFileSata=\n%@",writeData);
 }
 
--(NSString*)loadFileData{
+-(NSArray*)loadFileData{
     NSOpenPanel * zOpenPanel = [NSOpenPanel openPanel];
     NSArray * zAryOfExtensions = [NSArray arrayWithObject:@"hcp"];
     [zOpenPanel setAllowedFileTypes:zAryOfExtensions];
@@ -46,12 +49,12 @@
         NSLog(@"readUsingOpenPanel cancelled");
     }
     NSURL *zUrl = [zOpenPanel URL];
-    
     // read the file
-    NSString * zStr = [NSString stringWithContentsOfURL:zUrl
+  /*  NSString * zStr = [NSString stringWithContentsOfURL:zUrl
                                                encoding:NSASCIIStringEncoding
-                                                  error:NULL];
-    // NSLog(@"zStr=\n%@",zStr);
-    return zStr;
+                                                  error:NULL];*/
+    NSArray *ary = [NSArray arrayWithContentsOfURL:zUrl];
+  //  NSLog(@"loadFileData=\n%@",zStr);
+    return ary;
 }
 @end

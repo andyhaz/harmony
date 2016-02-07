@@ -12,17 +12,22 @@
 
 //change  color
 -(void)textColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
+    colorUtitle *cu = [[colorUtitle alloc]init];
+    
     myRedText = redBG;
     myGreenText = greenBG;
     myBlueText = blueBG;
     myAlphaText = alphaBG;
     
-    [ViewControlObject assignStringToTextField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
+    [ViewControlObject assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
     
     [self setNeedsDisplay:YES];
     
   //  NSLog(@"set text Color %f",myRedText);
 }//change object color
+-(void)textColorHex:(NSString*)hex{
+    
+}
 
 -(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
   //  NSLog(@"new outline Color");
@@ -37,26 +42,22 @@
     [self setNeedsDisplay:YES];
 }//change bg color
 
+-(void)outlineColorHex:(NSString*)hex{
+    
+}
+
 -(void)bgColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
+    colorUtitle *cu = [[colorUtitle alloc]init];
+
     myRedBG = redBG;
     myGreenBG = greenBG;
     myBlueBG = blueBG;
     myAlphaBG = alphaBG;
     
-    [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaText]]]];
+    [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaText]]]];
 //    [self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];
-}
-
-//color
-- (NSString *)getHexStringForColor:(NSColor*)color {
-    const CGFloat *components = CGColorGetComponents(color.CGColor);
-    CGFloat r = components[0];
-    CGFloat g = components[1];
-    CGFloat b = components[2];
-    
-    return [NSString stringWithFormat:@"%02X%02X%02X", (int)(r * 255), (int)(g * 255), (int)(b * 255)];
 }
 
 //set the string

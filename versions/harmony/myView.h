@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #import "shareControl.h"
+#import "colorUtitle.h"
 
 @interface myView : NSView {
    IBOutlet id ViewControlObject;
@@ -34,9 +35,10 @@
 }
 
 -(void)textColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
--(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
--(void)bgColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 
-- (NSString *)getHexStringForColor:(NSColor*)color;
+-(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
+
+-(void)bgColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
+//-(void)bgColorHex:(NSString*)hex;
 
 @end

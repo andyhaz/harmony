@@ -20,24 +20,13 @@
 @property NSString *element;
 
 @property double version;
-@property double textRed;
-@property double textBlue;
-@property double textGreen;
-@property double textAlpha;
-@property double bgRed;
-@property double bgBlue;
-@property double bgGreen;
-@property double bgAlpha;
+@property NSString *text;
+@property NSString *backGround;
+
 
 @property double currentVersion;
-@property double currentTextRed;
-@property double currentTextBlue;
-@property double currentTextGreen;
-@property double currentTextAlpha;
-@property double currentBgRed;
-@property double currentBgBlue;
-@property double currentBgGreen;
-@property double currentBgAlpha;
+@property NSString *currentText;
+@property NSString *currentBackGround;
 
 -(void)parseXML :(NSString*)xmlString;
 

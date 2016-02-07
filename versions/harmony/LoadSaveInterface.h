@@ -10,7 +10,7 @@
 
 @interface LoadSaveInterface : NSObject
 
--(void)saveFileSata :(NSString*)stringData;
--(NSString*)loadFileData;
+-(void)saveFiledata :(NSArray*)Data;
+-(NSArray*)loadFileData;
 
 @end
