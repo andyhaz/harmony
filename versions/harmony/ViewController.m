@@ -24,13 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0", nil];
-   //NSLog(@"init colorData%@",colorData);
-   //Do any additional setup after loading the view.
-   //myView *view = [[myView alloc] init];
     [myCustomViewObjOutlet textColor:1.0 :1.0 :1.0 :1.0];
     [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
-   //[textInfoField setStringValue:@"TextColer"];
-   //[bgInfoField setStringValue:@"BackgoundColor"];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -79,34 +74,7 @@
 }
 //handly menu
 - (IBAction)SaveMenu:(id)sender; {
-   // NSLog(@"saveMenu colorData:%@",colorData);
-//    colorUtitle *colorUtl = [[colorUtitle alloc]init];
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
-  //  GRSxmlphares *xml = [[GRSxmlphares alloc]init];
-   /* NSMutableArray *xmlAry = [[NSMutableArray alloc]init];
-    NSMutableArray *temp = [[NSMutableArray alloc]init];
-    //create the
-    [temp addObject:colorData[0]];
-    [temp addObject:colorData[1]];
-    [temp addObject:colorData[2]];
-    [temp addObject:colorData[3]];
-    NSColor *tc = [colorUtl colorFromHexArray:temp];
-    [temp removeAllObjects];
-    
-    [temp addObject:colorData[4]];
-    [temp addObject:colorData[5]];
-    [temp addObject:colorData[6]];
-    [temp addObject:colorData[7]];
-    NSColor *bg = [colorUtl colorFromHexArray:temp];
- 
- //   NSLog(@"colorData:%@",colorData);
-    [xmlAry addObject:[colorUtl getHexStringForColor:tc]];
-    [xmlAry addObject:[colorUtl getHexStringForColor:bg]];*/
-   //  NSLog(@"colorAry:%@",colorAry);
-    
-   // NSString *stringData = [xml saveXMLdata:colorData];
- //   NSLog(@"xmlData:%@",stringData);
-    
     [lsi saveFiledata:colorData];
    // NSLog(@"save strData:%@",stringData);
 } // end
@@ -114,13 +82,8 @@
 - (IBAction)OpenMenu:(id)sender; {
   //  NSLog(@"openMenu");
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
- //GRSxmlphares *xml = [[GRSxmlphares alloc]init];
-  //  NSString *stringData = [lsi loadFileData];
-    //NSLog(@"open xmlData:%@",[xml loadXMLdata:stringData]);
-    
     colorData = [[NSMutableArray alloc] initWithArray:[lsi loadFileData]];
-    NSLog(@"load colorData:%@",colorData);
-    
+  //  NSLog(@"load colorData:%@",colorData);
   
     float myRedText = [[colorData objectAtIndex:0] floatValue];
     float myGreenText = [[colorData objectAtIndex:1] floatValue];
@@ -154,8 +117,7 @@
 
 - (NSString *)returnNBGField {
     NSString * zString = [myBackgoundOutlet stringValue];
-  //  [myTextFieldOutlet out]
-    //NSLog(@"return text: %@",zString);
+    
     return zString;
 }//end returnNTextField
 
@@ -180,7 +142,6 @@
     [colorData replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%f",myGreen]];
     [colorData replaceObjectAtIndex:2 withObject:[NSString stringWithFormat:@"%f",myBlue]];
     [colorData replaceObjectAtIndex:3 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
-    
   //  NSLog(@"text action:%@",newColor);
 }
 

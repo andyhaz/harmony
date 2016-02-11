@@ -14,11 +14,11 @@
 		972B39381C20CF5800A6D716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972B39361C20CF5800A6D716 /* Main.storyboard */; };
 		972B39431C20CF5900A6D716 /* harmonyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B39421C20CF5900A6D716 /* harmonyTests.m */; };
 		972B394E1C20CF5900A6D716 /* harmonyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B394D1C20CF5900A6D716 /* harmonyUITests.m */; };
-		972B39631C20DABA00A6D716 /* shareControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B39621C20DABA00A6D716 /* shareControl.m */; };
 		972B4F4A1C6572FA00BF6208 /* colorUtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B4F491C6572FA00BF6208 /* colorUtitle.m */; };
 		978854881C42401C004A5ED5 /* XMLphares.m in Sources */ = {isa = PBXBuildFile; fileRef = 978854871C42401C004A5ED5 /* XMLphares.m */; };
 		9788548B1C424053004A5ED5 /* GRSxmlphares.m in Sources */ = {isa = PBXBuildFile; fileRef = 9788548A1C424053004A5ED5 /* GRSxmlphares.m */; };
 		9799A89A1C2AB1290076374A /* LoadSaveInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9799A8991C2AB1290076374A /* LoadSaveInterface.m */; };
+		97A88D9D1C6C66CB004A0712 /* shareControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A88D9C1C6C66CB004A0712 /* shareControl.m */; };
 		97D528401C2612C800500231 /* myView.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B395C1C20DA7B00A6D716 /* myView.m */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +57,6 @@
 		972B394F1C20CF5900A6D716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		972B395B1C20DA7B00A6D716 /* myView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myView.h; sourceTree = "<group>"; };
 		972B395C1C20DA7B00A6D716 /* myView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myView.m; sourceTree = "<group>"; };
-		972B39611C20DABA00A6D716 /* shareControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareControl.h; sourceTree = "<group>"; };
-		972B39621C20DABA00A6D716 /* shareControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareControl.m; sourceTree = "<group>"; };
 		972B4F481C6572FA00BF6208 /* colorUtitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = colorUtitle.h; sourceTree = "<group>"; };
 		972B4F491C6572FA00BF6208 /* colorUtitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = colorUtitle.m; sourceTree = "<group>"; };
 		978854861C42401C004A5ED5 /* XMLphares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLphares.h; sourceTree = "<group>"; };
@@ -67,6 +65,8 @@
 		9788548A1C424053004A5ED5 /* GRSxmlphares.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRSxmlphares.m; sourceTree = "<group>"; };
 		9799A8981C2AB1290076374A /* LoadSaveInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadSaveInterface.h; sourceTree = "<group>"; };
 		9799A8991C2AB1290076374A /* LoadSaveInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadSaveInterface.m; sourceTree = "<group>"; };
+		97A88D9B1C6C66CB004A0712 /* shareControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareControl.h; sourceTree = "<group>"; };
+		97A88D9C1C6C66CB004A0712 /* shareControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareControl.m; sourceTree = "<group>"; };
 		97FF2C7C1C4566CD006438BC /* Harmony.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Harmony.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,10 +166,10 @@
 				9788548A1C424053004A5ED5 /* GRSxmlphares.m */,
 				978854861C42401C004A5ED5 /* XMLphares.h */,
 				978854871C42401C004A5ED5 /* XMLphares.m */,
-				972B39611C20DABA00A6D716 /* shareControl.h */,
-				972B39621C20DABA00A6D716 /* shareControl.m */,
 				972B4F481C6572FA00BF6208 /* colorUtitle.h */,
 				972B4F491C6572FA00BF6208 /* colorUtitle.m */,
+				97A88D9B1C6C66CB004A0712 /* shareControl.h */,
+				97A88D9C1C6C66CB004A0712 /* shareControl.m */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -320,12 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A88D9D1C6C66CB004A0712 /* shareControl.m in Sources */,
 				972B39331C20CF5800A6D716 /* ViewController.m in Sources */,
 				9788548B1C424053004A5ED5 /* GRSxmlphares.m in Sources */,
 				9799A89A1C2AB1290076374A /* LoadSaveInterface.m in Sources */,
 				978854881C42401C004A5ED5 /* XMLphares.m in Sources */,
 				972B39301C20CF5800A6D716 /* main.m in Sources */,
-				972B39631C20DABA00A6D716 /* shareControl.m in Sources */,
 				97D528401C2612C800500231 /* myView.m in Sources */,
 				972B4F4A1C6572FA00BF6208 /* colorUtitle.m in Sources */,
 				972B392D1C20CF5800A6D716 /* AppDelegate.m in Sources */,

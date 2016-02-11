@@ -22,8 +22,7 @@
     [ViewControlObject assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
     
     [self setNeedsDisplay:YES];
-    
-  //  NSLog(@"set text Color %f",myRedText);
+//NSLog(@"set text Color %f",myRedText);
 }//change object color
 -(void)textColorHex:(NSString*)hex{
     
@@ -55,7 +54,7 @@
     myAlphaBG = alphaBG;
     
     [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaText]]]];
-//    [self setMyString: [myControlObj3 returnNBGField]];
+//[self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];
 }
@@ -72,9 +71,9 @@
     
 }// end setMyString
 
-- (void)mouseDown:(NSEvent *)theEvent{
+/*- (void)mouseDown:(NSEvent *)theEvent{
      NSLog(@"hello myView");
-}
+}*/
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
