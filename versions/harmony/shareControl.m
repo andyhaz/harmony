@@ -10,10 +10,10 @@
 
 @implementation shareControl
 
-- (NSString *)returnNTextField {
+- (NSString *)returnNFillField {
     NSLog(@"returnNTextField");
     return(@"string from shareControl");
-} // end returnNTextField
+} // end returnNFillField
 
 - (NSString *)returnNOutlineField{
     return(@"string from shareControl");
@@ -23,7 +23,7 @@
     return(@"string from shareControl");
 }
 
-- (void)assignStringToTextField:(NSString *)pString {
+- (void)assignStringToFillField:(NSString *)pString {
     NSLog(@"shareControl %@",pString);
 } // end assignStringToTextField
 

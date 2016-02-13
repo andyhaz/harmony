@@ -10,11 +10,11 @@
 
 @interface shareControl : NSObject
 
-- (NSString *)returnNTextField;
+- (NSString *)returnNFillField;
 - (NSString *)returnNOutlineField;
 - (NSString *)returnNBGField;
 
-- (void)assignStringToTextField:(NSString *)pString;
+- (void)assignStringToFillField:(NSString *)pString;
 - (void)assignStringToOutlineField:(NSString *)pString;
 - (void)assignStringToBGField:(NSString *)pString;
 

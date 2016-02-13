@@ -106,7 +106,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="ViewController"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-23.5" y="1"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -115,7 +115,7 @@
                     <window key="window" title="Harmony" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="216" height="136"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -124,32 +124,32 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-24" y="202"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="222" height="216"/>
+                        <rect key="frame" x="0.0" y="0.0" width="222" height="247"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-XQ-cNZ">
-                                <rect key="frame" x="54" y="51" width="44" height="23"/>
+                                <rect key="frame" x="63" y="82" width="44" height="23"/>
                                 <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="textColorWell:" target="XfG-lQ-9wD" id="7hJ-Oq-QfW"/>
+                                    <action selector="fillColorWell:" target="XfG-lQ-9wD" id="eCF-RI-oB5"/>
                                 </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u17-3u-BL4">
-                                <rect key="frame" x="54" y="18" width="44" height="23"/>
+                                <rect key="frame" x="63" y="20" width="44" height="23"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="backgoundColorWell:" target="XfG-lQ-9wD" id="vxl-vd-fCl"/>
+                                    <action selector="backgoundColorWell:" target="XfG-lQ-9wD" id="9uk-7K-QJO"/>
                                 </connections>
                             </colorWell>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-D3-zn1">
-                                <rect key="frame" x="106" y="51" width="96" height="22"/>
+                                <rect key="frame" x="115" y="82" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9zo-Tl-LWX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -160,7 +160,7 @@
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSg-t4-XDn">
-                                <rect key="frame" x="106" y="17" width="96" height="22"/>
+                                <rect key="frame" x="115" y="19" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xwN-hO-3Dl">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -171,15 +171,33 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Csy-sF-FDf">
-                                <rect key="frame" x="18" y="54" width="30" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text" id="8R1-pb-hsP">
+                                <rect key="frame" x="36" y="82" width="21" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fill" id="8R1-pb-hsP">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-6G-xnC">
+                                <rect key="frame" x="63" y="51" width="44" height="23"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="outlineColorWell:" target="XfG-lQ-9wD" id="erg-oU-YfC"/>
+                                </connections>
+                            </colorWell>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3E-Xt-ekA">
+                                <rect key="frame" x="115" y="51" width="96" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="FrO-mD-FUa">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textAction:" target="XfG-lQ-9wD" id="HIo-Iz-5m2"/>
+                                </connections>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNG-Sm-2aI">
-                                <rect key="frame" x="25" y="20" width="23" height="17"/>
+                                <rect key="frame" x="34" y="20" width="23" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BG" id="9UR-e4-LmM">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -187,31 +205,35 @@
                                 </textFieldCell>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-r2-Kn1" customClass="myView">
-                                <rect key="frame" x="0.0" y="82" width="227" height="134"/>
-                                <connections>
-                                    <outlet property="ViewControlObject" destination="YgC-dO-nlc" id="iUf-hO-RTB"/>
-                                    <outlet property="ViewControlObjectB" destination="YgC-dO-nlc" id="VCY-Hb-6e2"/>
-                                </connections>
+                                <rect key="frame" x="0.0" y="113" width="227" height="134"/>
                             </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XP3-tv-3LA">
+                                <rect key="frame" x="9" y="51" width="48" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Outline" id="BO5-ks-vMV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="bgInfoFieldOutlet" destination="XSg-t4-XDn" id="4Q2-WG-L3P"/>
-                        <outlet property="colorWellBackground" destination="u17-3u-BL4" id="xei-Fu-MMh"/>
-                        <outlet property="colorWellText" destination="gP3-XQ-cNZ" id="PgW-jN-Z1J"/>
-                        <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="KKF-tO-1Hj"/>
-                        <outlet property="textInfoFieldOutlet" destination="nWw-D3-zn1" id="ztf-rO-0vK"/>
+                        <outlet property="colorWellBackground" destination="u17-3u-BL4" id="X5h-sG-LIu"/>
+                        <outlet property="colorWellFill" destination="gP3-XQ-cNZ" id="x50-eD-aDW"/>
+                        <outlet property="colorWellOutline" destination="MBw-6G-xnC" id="mgY-hm-ZXc"/>
+                        <outlet property="fillInfoFieldOutlet" destination="g3E-Xt-ekA" id="bnJ-9R-6DS"/>
+                        <outlet property="myBackgoundOutlet" destination="XSg-t4-XDn" id="1ja-A7-Jly"/>
+                        <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="fVB-Qk-wP0"/>
+                        <outlet property="myFillFieldOutlet" destination="nWw-D3-zn1" id="N3u-ix-3y0"/>
+                        <outlet property="myOutlineOutlet" destination="g3E-Xt-ekA" id="QHy-V6-Pc5"/>
+                        <outlet property="outlineInfoFieldOutlet" destination="g3E-Xt-ekA" id="GZ1-Ji-5xa"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="YgC-dO-nlc" customClass="ViewController">
-                    <connections>
-                        <outlet property="myBackgoundOutlet" destination="XSg-t4-XDn" id="p8b-5N-5TN"/>
-                        <outlet property="myTextFieldOutlet" destination="nWw-D3-zn1" id="8cJ-mK-Bqv"/>
-                    </connections>
-                </customObject>
+                <customObject id="YgC-dO-nlc" customClass="ViewController"/>
             </objects>
-            <point key="canvasLocation" x="75" y="631"/>
+            <point key="canvasLocation" x="-21" y="558.5"/>
         </scene>
     </scenes>
 </document>

@@ -14,19 +14,19 @@
 @interface myView : NSView {
    IBOutlet id ViewControlObject;
    IBOutlet id ViewControlObjectB;
- //   IBOutlet id myControlObj3;
+   IBOutlet id ViewControlObjectA;
     
-    NSString *myTextString,*myBackgoundString;
+    NSString *myFillString,*myOutLineString,*myBackgoundString;
     
-    float myRedText;
-    float myGreenText;
-    float myBlueText;
-    float myAlphaText;
+    float myRedFill;
+    float myGreenFill;
+    float myBlueFill;
+    float myAlphaFill;
     
-    float myRedObj;
-    float myGreenObj;
-    float myBlueObj;
-    float myAlphaObj;
+    float myRedOutline;
+    float myGreenOutline;
+    float myBlueOutline;
+    float myAlphaOutline;
     
     float myRedBG;
     float myGreenBG;
@@ -34,7 +34,7 @@
     float myAlphaBG;
 }
 
--(void)textColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
+-(void)fillColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 
 -(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
 

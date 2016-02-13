@@ -11,34 +11,35 @@
 @implementation myView
 
 //change  color
--(void)textColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
+-(void)fillColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
     colorUtitle *cu = [[colorUtitle alloc]init];
     
-    myRedText = redBG;
-    myGreenText = greenBG;
-    myBlueText = blueBG;
-    myAlphaText = alphaBG;
+    myRedFill = redBG;
+    myGreenFill = greenBG;
+    myBlueFill = blueBG;
+    myAlphaFill = alphaBG;
     
-    [ViewControlObject assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
+    [ViewControlObject assignStringToFillField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]]];
     
     [self setNeedsDisplay:YES];
-//NSLog(@"set text Color %f",myRedText);
+NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 }//change object color
--(void)textColorHex:(NSString*)hex{
-    
-}
+
 
 -(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
   //  NSLog(@"new outline Color");
-    myRedObj = redBG;
-    myGreenObj = greenBG;
-    myBlueObj = blueBG;
-    myAlphaObj = alphaBG;
+    colorUtitle *cu = [[colorUtitle alloc]init];
     
-//    [myControlObj2 assignStringToOutlineField:[NSString stringWithFormat:@"#%@",[self getHexStringForColor:[NSColor colorWithSRGBRed:myRedObj green:myGreenObj blue:myBlueObj alpha:myAlphaText]]]];
- //   [self setMyString: [myControlObj2 returnNOutlineField]];
+    myRedOutline = redBG;
+    myGreenOutline = greenBG;
+    myBlueOutline = blueBG;
+    myAlphaOutline = alphaBG;
+    
+    [ViewControlObjectA assignStringToOutlineField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]]];
     
     [self setNeedsDisplay:YES];
+    NSLog(@"set outline Color");
+
 }//change bg color
 
 -(void)outlineColorHex:(NSString*)hex{
@@ -53,10 +54,12 @@
     myBlueBG = blueBG;
     myAlphaBG = alphaBG;
     
-    [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaText]]]];
+    [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG]]]];
 //[self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];
+    
+    NSLog(@"set backgound Color");
 }
 
 //set the string
@@ -64,9 +67,9 @@
 {
     // prevent an NSInvalidArgumentException if pString is nil.
     if(pString) {
-        myTextString = [[NSString alloc]initWithString:	pString];
+        myFillString = [[NSString alloc]initWithString:	pString];
     } else {
-        myTextString = @"";
+        myFillString = @"";
     } // end if
     
 }// end setMyString
@@ -77,101 +80,32 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
-    // Drawing code here.
-  //  NSLog(@"drawRect");
-    NSString * zString	= @"Harmony";
-    NSPoint	zPoint;
-    zPoint.x	= 30.0;
-    zPoint.y	= 50.0;
+// Drawing code here.
+  NSLog(@"drawRect");
     
-    //setup text
-    NSFontManager *fontManager = [NSFontManager sharedFontManager];
-    NSFont *textFont = [fontManager fontWithFamily:@"Helvetica"
-                                            traits:NSUnboldFontMask
-                                            weight:0
-                                              size:40];
-    //set text color
-    NSColor *textColor = [NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText];
-  //  NSLog(@"%f:",myRedText);
-    
-    //set background color
+//set background color
    [[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG] setFill];
-    NSRectFill( dirtyRect );
-  //  NSLog(@"myRedBG: %f",myRedBG);
+    NSRectFill( dirtyRect);
     
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-
-    NSMutableDictionary *zDictAttributes = [[NSMutableDictionary alloc] init];
-
-    [zDictAttributes setObject:textFont
-                     forKey:NSFontAttributeName];
+//set box and out line color
+    NSPoint origin = { 65,15 };
     
-    [zDictAttributes setObject:textColor
-                     forKey:NSForegroundColorAttributeName];
-    CGContextSaveGState(context);
-
-    [zString drawAtPoint:zPoint withAttributes:zDictAttributes];
+    NSRect rect;
+    rect.origin = origin;
+    rect.size.width  = 100;
+    rect.size.height = 100;
+    
+    NSBezierPath * path;
+    path = [NSBezierPath bezierPathWithRect:rect];
+    
+    [path setLineWidth:3];
+    
+    [[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill] setFill];
+    //[[NSColor whiteColor] set];
+    [path fill];
+    
+    [[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline] set];
+   // [[NSColor grayColor] set];
+    [path stroke];
 }
 @end
-// Create a grayscale context for the mask
-/*
- //CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 0.7);
- CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
- CGContextSetTextDrawingMode(context, kCGTextFillStroke);
- //[zString drawAtPoint:point withFont:textFont];
- 
- CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceGray();
- CGContextRef maskContext =
- CGBitmapContextCreate(
- NULL,
- self.bounds.size.width,
- self.bounds.size.height,
- 8,
- self.bounds.size.width,
- colorspace,
- 0);
- CGColorSpaceRelease(colorspace);
- 
- // Switch to the context for drawing
- NSGraphicsContext *maskGraphicsContext =
- [NSGraphicsContext
- graphicsContextWithGraphicsPort:maskContext
- flipped:NO];
- [NSGraphicsContext saveGraphicsState];
- [NSGraphicsContext setCurrentContext:maskGraphicsContext];
- 
- //Draw a black background
- [bgColor setFill];
- CGContextFillRect(maskContext, dirtyRect);
- 
- //Draw the text right-way-up (non-flipped context)
- [zString drawInRect:dirtyRect withAttributes:
- [NSDictionary dictionaryWithObjectsAndKeys:
- [NSFont fontWithName:@"Helvetica" size:40], NSFontAttributeName,
- [NSColor whiteColor], NSForegroundColorAttributeName,
- nil]];
- 
- //Switch back to the window's context
- [NSGraphicsContext restoreGraphicsState];
- 
- //Create an image mask from what we've drawn so far
- CGImageRef alphaMask = CGBitmapContextCreateImage(maskContext);
- 
- //Draw a white background in the window
- CGContextRef windowContext = [[NSGraphicsContext currentContext] graphicsPort];
- [bgColor setFill];
- 
- 
- CGContextFillRect(windowContext, dirtyRect);
- //Draw the box, clipped by the mask
- CGContextSaveGState(windowContext);
- // NSRect size = NSMakeRect(35, 10, 200, 100);
- CGContextClipToMask(windowContext, NSRectToCGRect(self.bounds), alphaMask);
- [outlineColor set];//set to chenge the color
- NSRectFill(dirtyRect);
- // [[NSImage imageNamed:@"shuttle"] drawInRect:dirtyRect fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];
- CGContextRestoreGState(windowContext);
- CGImageRelease(alphaMask);
- //
- */
-
