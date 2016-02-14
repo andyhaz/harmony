@@ -116,31 +116,34 @@
     float myBlueBG = [[colorData objectAtIndex:10] floatValue];
     float myAlphaBG = [[colorData objectAtIndex:11] floatValue];
     
-  //  [myCustomViewObjOutlet textColor:myRedText :myGreenText :myBlueText :myAlphaText];
+    [myCustomViewObjOutlet fillColor:myRedFill :myGreenFill :myBlueFill :myAlphaFill];
     [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
 } // end
 
-- (void)assignStringToTextField:(NSString *)pString {
- //   NSLog(@"assign string A");
+- (void)assignStringToFillField:(NSString *)pString {
     [colorData addObject:pString];
     [myFillFieldOutlet setStringValue:pString];
 }//end assignStringToTextField
 
-- (NSString *)returnNTextField {
-    NSString * zString = [myFillFieldOutlet stringValue];
-   // NSLog(@"return text: %@",zString);
-    return zString;
+- (NSString *)returnNFillField {
+    return [myFillFieldOutlet stringValue];
 }//end returnNTextField
+
+- (void)assignStringToOutlineField:(NSString *)pString{
+    [colorData addObject:pString];
+    [myOutlineOutlet setStringValue:pString];
+}
+
+- (NSString *)returnNOutlineField{
+   return [myOutlineOutlet stringValue];
+}
 //
 - (void)assignStringToBGField:(NSString *)pString {
-    //NSLog(@"assign string C");
     [myBackgoundOutlet setStringValue:pString];
 }//end assignStringToTextField
 
 - (NSString *)returnNBGField {
-    NSString * zString = [myBackgoundOutlet stringValue];
-    
-    return zString;
+    return  [myBackgoundOutlet stringValue];
 }//end returnNTextField
 
 - (IBAction)textAction:(id)sender {
@@ -148,7 +151,6 @@
     colorUtitle *colorUtl = [[colorUtitle alloc]init];
     NSColor *newColor =  [colorUtl colorFromHexString:textStr];
     NSColorWell *well = colorWellFill;
-
     
     float myRed = newColor.redComponent;
     float myGreen = newColor.greenComponent;

@@ -19,7 +19,7 @@
     myBlueFill = blueBG;
     myAlphaFill = alphaBG;
     
-    [ViewControlObject assignStringToFillField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]]];
+    [ViewControlObjectFill assignStringToFillField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]]];
     
     [self setNeedsDisplay:YES];
 NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
@@ -35,7 +35,7 @@ NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
     myBlueOutline = blueBG;
     myAlphaOutline = alphaBG;
     
-    [ViewControlObjectA assignStringToOutlineField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]]];
+    [ViewControlObjectOutline assignStringToOutlineField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]]];
     
     [self setNeedsDisplay:YES];
     NSLog(@"set outline Color");
@@ -54,7 +54,7 @@ NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
     myBlueBG = blueBG;
     myAlphaBG = alphaBG;
     
-    [ViewControlObjectB assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG]]]];
+    [ViewControlObjectBG assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG]]]];
 //[self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];

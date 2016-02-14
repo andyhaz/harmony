@@ -12,9 +12,9 @@
 #import "colorUtitle.h"
 
 @interface myView : NSView {
-   IBOutlet id ViewControlObject;
-   IBOutlet id ViewControlObjectB;
-   IBOutlet id ViewControlObjectA;
+   IBOutlet id ViewControlObjectFill;
+   IBOutlet id ViewControlObjectOutline;
+   IBOutlet id ViewControlObjectBG;
     
     NSString *myFillString,*myOutLineString,*myBackgoundString;
     
