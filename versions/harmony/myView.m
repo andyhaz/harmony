@@ -22,7 +22,7 @@
     [ViewControlObjectFill assignStringToFillField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]]];
     
     [self setNeedsDisplay:YES];
-NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
+//NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 }//change object color
 
 
@@ -58,8 +58,8 @@ NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 //[self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];
-    
-    NSLog(@"set backgound Color");
+  
+  //  NSLog(@"set backgound Color");
 }
 
 //set the string
@@ -81,7 +81,7 @@ NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
 // Drawing code here.
-  NSLog(@"drawRect");
+//  NSLog(@"drawRect");
     
 //set background color
    [[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG] setFill];

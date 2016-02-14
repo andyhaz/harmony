@@ -98,6 +98,7 @@
 - (IBAction)OpenMenu:(id)sender; {
   //  NSLog(@"openMenu");
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
+    [colorData removeAllObjects];
     colorData = [[NSMutableArray alloc] initWithArray:[lsi loadFileData]];
   //  NSLog(@"load colorData:%@",colorData);
   
@@ -117,6 +118,7 @@
     float myAlphaBG = [[colorData objectAtIndex:11] floatValue];
     
     [myCustomViewObjOutlet fillColor:myRedFill :myGreenFill :myBlueFill :myAlphaFill];
+    [myCustomViewObjOutlet outlineColor:myRedOutline :myGreenOutline :myBlueOutline :myAlphaOutline];
     [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
 } // end
 
