@@ -6,6 +6,18 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="colorViewController">
             <connections>
+                <outlet property="BlueBGInfoField" destination="yvh-Ix-1Vc" id="O3E-Xc-fxt"/>
+                <outlet property="BlueFillInfoField" destination="SPi-7T-6MF" id="IO2-Nh-jUF"/>
+                <outlet property="BlueOutlineInfoField" destination="M9D-fx-9wM" id="5l5-sg-eeN"/>
+                <outlet property="BlueTextInfoField" destination="sND-d7-o7E" id="heY-qz-MXe"/>
+                <outlet property="GreenBGInfoField" destination="aL7-Jk-TTV" id="U9U-fS-Ywc"/>
+                <outlet property="GreenFillInfoField" destination="hj2-G1-QzI" id="gP5-7Z-nle"/>
+                <outlet property="GreenOutlineInfoField" destination="gDe-Lv-FWb" id="zel-jJ-xrg"/>
+                <outlet property="GreenTextInfoField" destination="Zdm-cX-Ybx" id="qEk-gp-Bcd"/>
+                <outlet property="RedBGInfoField" destination="ddl-dY-nfH" id="DQJ-7B-ibM"/>
+                <outlet property="RedFillInfoField" destination="K6I-RV-mLm" id="KLR-fU-kth"/>
+                <outlet property="RedOutlineInfoField" destination="4JE-RZ-oTs" id="iNf-ka-Dhg"/>
+                <outlet property="RedTextInfoField" destination="0Qk-jW-0Pk" id="IZO-tm-i96"/>
                 <outlet property="bgInfoFieldOutlet" destination="xHa-3P-DFt" id="0TM-H0-2iF"/>
                 <outlet property="fillInfoField" destination="9tb-gr-e55" id="oNl-RI-asF"/>
                 <outlet property="outlineInfoFieldOutlet" destination="4Zd-Uh-d3O" id="xz0-d5-dQV"/>
