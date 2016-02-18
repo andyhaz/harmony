@@ -67,7 +67,7 @@
     
     NSLog(@"textColor:%f",myRedText);
     
-    [ViewControlObjectBG assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
+    [ViewControlObjectText assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
     [self setNeedsDisplay:YES];
 }
 

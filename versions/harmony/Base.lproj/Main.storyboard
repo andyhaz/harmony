@@ -162,7 +162,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="410" height="193"/>
+                        <rect key="frame" x="0.0" y="0.0" width="401" height="193"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-r2-Kn1" customClass="myView">
@@ -171,7 +171,7 @@
                                     <outlet property="ViewControlObjectBG" destination="YgC-dO-nlc" id="nA7-Hu-zNY"/>
                                     <outlet property="ViewControlObjectFill" destination="YgC-dO-nlc" id="UbR-9P-SUk"/>
                                     <outlet property="ViewControlObjectOutline" destination="YgC-dO-nlc" id="Jbb-dn-7Dm"/>
-                                    <outlet property="ViewControlObjectText" destination="m2S-Jp-Qdl" id="hfH-Dw-w97"/>
+                                    <outlet property="ViewControlObjectText" destination="YgC-dO-nlc" id="icy-HW-XvU"/>
                                 </connections>
                             </customView>
                             <colorWell canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u17-3u-BL4">
@@ -267,13 +267,6 @@
                                     <action selector="fillColorWell:" target="XfG-lQ-9wD" id="eCF-RI-oB5"/>
                                 </connections>
                             </colorWell>
-                            <colorWell canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-TH-4Cw">
-                                <rect key="frame" x="353" y="59" width="44" height="23"/>
-                                <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="textColorWell:" target="XfG-lQ-9wD" id="aks-3M-y0s"/>
-                                </connections>
-                            </colorWell>
                             <textField canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etX-fS-yMz">
                                 <rect key="frame" x="236" y="7" width="63" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Size:" id="3Vq-Pg-hOv">
@@ -290,6 +283,13 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <colorWell canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-TH-4Cw">
+                                <rect key="frame" x="353" y="59" width="44" height="23"/>
+                                <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="textColorWell:" target="XfG-lQ-9wD" id="aks-3M-y0s"/>
+                                </connections>
+                            </colorWell>
                         </subviews>
                     </view>
                     <connections>
@@ -303,7 +303,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="YgC-dO-nlc" customClass="ViewController"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="564.5"/>
+            <point key="canvasLocation" x="-23.5" y="594.5"/>
         </scene>
     </scenes>
 </document>

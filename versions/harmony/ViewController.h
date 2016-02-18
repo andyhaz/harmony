@@ -34,9 +34,9 @@
 
 - (IBAction)MeinMenuWindo:(id)sender;
 
-@property (weak) IBOutlet NSTextField *fillInfoField;
-@property (weak) IBOutlet NSTextField *outlineInfoFieldOutlet;
-@property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
+//@property (weak) IBOutlet NSTextField *fillInfoField;
+//@property (weak) IBOutlet NSTextField *outlineInfoFieldOutlet;
+//@property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
 
 //- (IBAction)textAction:(id)sender;
 //- (IBAction)bgAction:(id)sender;
@@ -49,10 +49,12 @@
 - (NSString *)returnNFillField;
 - (NSString *)returnNOutlineField;
 - (NSString *)returnNBGField;
+- (NSString *)returnNTextField;
 
 - (void)assignStringToFillField:(NSString *)pString;
 - (void)assignStringToOutlineField:(NSString *)pString;
 - (void)assignStringToBGField:(NSString *)pString;
+- (void)assignStringToTextField:(NSString *)pString;
 
 @property (weak) NSString *infoStr;
 

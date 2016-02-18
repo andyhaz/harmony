@@ -19,7 +19,7 @@
 
 @implementation ViewController
 
-@synthesize colorData,colorWellBackground,colorWellFill,colorWellOutline,bgInfoFieldOutlet;
+@synthesize colorData,colorWellBackground,colorWellFill,colorWellOutline,colorWelltext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,15 +29,13 @@
     [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
     [myCustomViewObjOutlet textColor:0.0 :1.0 :0.0 :1.0];
     
-    
     [self openColorWindow];
-  //  cvc = [[colorViewController alloc] init];
     [cvc setMyData:colorData];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-    // Update the view, if already loaded.
+    //Update the view, if already loaded.
 }
 
 - (IBAction)fillColorWell:(id)pId{
@@ -88,7 +86,7 @@
     //NSLog(@"new bg Color:%@",colorWell3.color);
 }
 - (IBAction)textColorWell:(id)pId{
-    NSColorWell *well = colorWellBackground;
+    NSColorWell *well = colorWelltext;
     float myRed = well.color.redComponent;
     float myGreen = well.color.greenComponent;
     float myBlue = well.color.blueComponent;
@@ -147,7 +145,7 @@
 
 - (void)assignStringToFillField:(NSString *)pString {
     [colorData addObject:pString];
-}//end assignStringToTextField
+}//end
 
 - (NSString *)returnNFillField {
     return [myFillFieldOutlet stringValue];
@@ -160,7 +158,7 @@
 - (NSString *)returnNOutlineField{
    return [myOutlineOutlet stringValue];
 }
-//
+
 - (void)assignStringToBGField:(NSString *)pString {
     [colorData addObject:pString];
 }//end assignStringToTextField

@@ -17,8 +17,6 @@
    IBOutlet id ViewControlObjectBG;
    IBOutlet id ViewControlObjectText;
     
-   // NSString *myFillString,*myOutLineString,*myBackgoundString;
-    
     float myRedFill;
     float myGreenFill;
     float myBlueFill;
