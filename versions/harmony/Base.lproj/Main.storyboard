@@ -265,8 +265,14 @@
                                     <menu key="menu" title="9" id="Ahp-qe-bLv">
                                         <items>
                                             <menuItem title="9" id="WVk-uA-RSN"/>
-                                            <menuItem title="12" id="HcR-6i-ZRh"/>
-                                            <menuItem title="18" id="uJO-l4-Gk5"/>
+                                            <menuItem title="12" state="on" id="HcR-6i-ZRh"/>
+                                            <menuItem title="14" id="uJO-l4-Gk5"/>
+                                            <menuItem title="18" id="3l0-q0-oF7"/>
+                                            <menuItem title="24" id="cPv-wR-enF"/>
+                                            <menuItem title="29" id="pWd-o3-x2J"/>
+                                            <menuItem title="32" id="AGv-1U-soG"/>
+                                            <menuItem title="40" id="fai-6B-9Qe"/>
+                                            <menuItem title="46" id="5nh-XA-al0"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>

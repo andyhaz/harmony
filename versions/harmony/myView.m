@@ -145,7 +145,7 @@
      NSFont *textFont = [fontManager fontWithFamily:@"Helvetica"
      traits:NSUnboldFontMask
      weight:0
-     size:40];
+     size:mySize];
      //set text color
      //  NSLog(@"%f:",myRedText);
      CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];

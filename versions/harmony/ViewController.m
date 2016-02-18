@@ -13,22 +13,35 @@
     colorViewController *cvc;
 }
 
+@property (retain) NSMutableArray *configData;
 @property (retain) NSMutableArray *colorData;
 @property (retain) NSMutableArray *hexData;
 @property (nonatomic) float borderSizeData;
+@property (nonatomic) float textSize;
+@property (nonatomic) BOOL boxShow;
+@property (nonatomic) BOOL textShow;
+@property (nonatomic) NSString *textFeildData;
 
 @end
 
 @implementation ViewController
 
 @synthesize colorData,colorWellBackground,colorWellFill,colorWellOutline,colorWelltext,hexData;
-@synthesize borderSizeOutLine,usrTestOutline,borderSizeData;
+@synthesize configData,borderSizeOutLine,usrTestOutline,borderSizeData,textSize;
+@synthesize boxShow,textShow,textFeildData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     borderSizeData = 3.0;
-    
-    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0",@"0.0",@"1.0",@"0.0",@"1.0", nil];
+    textSize = 9;
+    boxShow = true;
+    textShow = true;
+    textFeildData = @"Harmony";
+    configData = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithFloat:borderSizeData],[NSNumber numberWithFloat:textSize],[NSNumber numberWithBool:boxShow],[NSNumber numberWithBool:textShow],textFeildData, nil];
+    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",
+                                                        @"1.0",@"0.0",@"0.0",@"1.0",
+                                                        @"0.0",@"0.0",@"0.0",@"1.0",
+                                                        @"0.0",@"1.0",@"0.0",@"1.0", nil];
     NSString *fillColorHex =  [myCustomViewObjOutlet fillColor:1.0 :1.0 :1.0 :1.0];
     NSString *objOutlineHex = [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0];
     NSString *bgColorHex = [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
@@ -123,13 +136,25 @@
 }
 
 - (IBAction)borderSize:(id)sender {
-  borderSizeData = [borderSizeOutLine intValue];
+  borderSizeData = [borderSizeOutLine floatValue];
+  [configData replaceObjectAtIndex:0 withObject:[NSNumber numberWithFloat:borderSizeData]];
   [myCustomViewObjOutlet BorderSize:borderSizeData];
 }
 
 - (IBAction)usrText:(id)sender {
-    [myCustomViewObjOutlet usrText:[usrTestOutline stringValue]];
+    textFeildData = [usrTestOutline stringValue];
+    [configData replaceObjectAtIndex:5 withObject:textFeildData];
+    [myCustomViewObjOutlet usrText:textFeildData];
 }
+
+- (IBAction)textSize:(id)sender {
+    NSLog(@"new size:%@",[[sender selectedItem] title]);
+    NSString *ts = [[sender selectedItem] title];
+    textSize = [ts floatValue];
+    [configData replaceObjectAtIndex:4 withObject:[NSNumber numberWithFloat:textSize]];
+    [myCustomViewObjOutlet textSize:textSize];
+}
+
 //handly menu
 - (IBAction)colorWindow:(id)sender {
    // NSLog(@"hex Data:%@ colordata:%@",hexData,colorData);
@@ -138,7 +163,6 @@
 
 - (void)openColorWindow {
     if (!cvc) cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
-
     [cvc showWindow:self];
     [self updateDisplay];
 }
@@ -160,9 +184,7 @@
    // NSLog(@"save strData:%@",stringData);
 } // end
 
-- (IBAction)textSize:(id)sender {
-    
-}
+
 
 - (IBAction)OpenMenu:(id)sender; {
   //  NSLog(@"openMenu");
