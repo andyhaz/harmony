@@ -9,13 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 @interface colorViewController : NSWindowController{
+    
     IBOutlet NSTextField *myFillFieldOutlet;
     IBOutlet NSTextField *myOutlineOutlet;
     IBOutlet NSTextField *myBackgoundOutlet;
     IBOutlet NSTextField *myTextOutlet;
 }
 
-@property NSMutableArray *myData;
+@property (nonatomic,retain) NSMutableArray *myColorData;
+@property (nonatomic,retain) NSMutableArray *myColorHex;
 
 @property (weak) IBOutlet NSTextField *fillInfoField;
 @property (weak) IBOutlet NSTextField *outlineInfoFieldOutlet;

@@ -38,12 +38,12 @@
     float myAlphaText;
 }
 
--(void)fillColor :(float)red :(float)green :(float)blue :(float)alpha;
+-(NSString*)fillColor :(float)red :(float)green :(float)blue :(float)alpha;
 
--(void)outlineColor :(float)red :(float)green :(float)blue :(float)alpha;
+-(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha;
 
--(void)bgColor :(float)red :(float)green :(float)blue :(float)alpha;
+-(NSString*)bgColor :(float)red :(float)green :(float)blue :(float)alpha;
 
--(void)textColor :(float)red :(float)green :(float)blue :(float)alpha;
+-(NSString*)textColor :(float)red :(float)green :(float)blue :(float)alpha;
 
 @end

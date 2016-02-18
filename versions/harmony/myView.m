@@ -11,7 +11,7 @@
 @implementation myView
 
 //change  color
--(void)fillColor :(float)red :(float)green :(float)blue :(float)alpha{
+-(NSString*)fillColor :(float)red :(float)green :(float)blue :(float)alpha{
     colorUtitle *cu = [[colorUtitle alloc]init];
     
     myRedFill = red;
@@ -19,14 +19,18 @@
     myBlueFill = blue;
     myAlphaFill = alpha;
     
-    [ViewControlObjectFill assignStringToFillField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]]];
+    NSString *hexColor = [NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]];
+    
+    [ViewControlObjectFill assignStringToFillField:hexColor];
     
     [self setNeedsDisplay:YES];
+    
+    return  hexColor;
 //NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 }//change object color
 
 
--(void)outlineColor :(float)red :(float)green :(float)blue :(float)alpha{
+-(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha{
   //  NSLog(@"new outline Color");
     colorUtitle *cu = [[colorUtitle alloc]init];
     
@@ -35,14 +39,18 @@
     myBlueOutline = blue;
     myAlphaOutline = alpha;
     
-    [ViewControlObjectOutline assignStringToOutlineField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]]];
+    NSString *hexColor = [NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]];
+    
+ //   [ViewControlObjectOutline assignStringToOutlineField:hexColor];
     
     [self setNeedsDisplay:YES];
+    
+    return hexColor;
   //  NSLog(@"set outline Color");
 
 }//change outline color
 
--(void)bgColor :(float)red :(float)green :(float)blue :(float)alpha {
+-(NSString*)bgColor :(float)red :(float)green :(float)blue :(float)alpha {
     colorUtitle *cu = [[colorUtitle alloc]init];
 
     myRedBG = red;
@@ -50,14 +58,17 @@
     myBlueBG = blue;
     myAlphaBG = alpha;
     
-    [ViewControlObjectBG assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG]]]];
+    NSString *hexColor = [NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG]]];
+    
+   // [ViewControlObjectBG assignStringToBGField:hexColor];
     
     [self setNeedsDisplay:YES];
   
+    return hexColor;
   //  NSLog(@"set backgound Color");
 }
 
--(void)textColor :(float)red :(float)green :(float)blue :(float)alpha{
+-(NSString*)textColor :(float)red :(float)green :(float)blue :(float)alpha{
     colorUtitle *cu = [[colorUtitle alloc]init];
     
     myRedText = red;
@@ -65,10 +76,12 @@
     myBlueText = blue;
     myAlphaText = alpha;
     
-    NSLog(@"textColor:%f",myRedText);
+    NSString *hexColor = [NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]];
     
-    [ViewControlObjectText assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
+  //  [ViewControlObjectText assignStringToTextField:hexColor];
     [self setNeedsDisplay:YES];
+    
+    return hexColor;
 }
 
 /*- (void)mouseDown:(NSEvent *)theEvent{
