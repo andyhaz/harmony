@@ -10,7 +10,7 @@
 
 
 @interface ViewController (){
-    //NSString *myControlString;
+    colorViewController *cvc;
 }
 
 @property (retain) NSMutableArray *colorData;
@@ -27,6 +27,8 @@
     [myCustomViewObjOutlet fillColor:1.0 :1.0 :1.0 :1.0];
     [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0];
     [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
+    
+    [self openColorWindow];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -95,6 +97,10 @@
    // NSLog(@"save strData:%@",stringData);
 } // end
 
+- (IBAction)colorWindow:(id)sender {
+    
+}
+
 - (IBAction)OpenMenu:(id)sender; {
   //  NSLog(@"openMenu");
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
@@ -147,6 +153,13 @@
 - (NSString *)returnNBGField {
     return  [myBackgoundOutlet stringValue];
 }//end returnNTextField
+
+- (void)openColorWindow {
+    if (!cvc) {
+        cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
+    }
+    [cvc showWindow:self];
+}
 
 - (IBAction)textAction:(id)sender {
     NSString *textStr = [bgInfoFieldOutlet stringValue];

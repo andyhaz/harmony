@@ -10,6 +10,7 @@
 #import "LoadSaveInterface.h"
 #import "GRSxmlphares.h"
 #import "colorUtitle.h"
+#import "colorViewController.h"
 
 @interface ViewController : NSViewController {    
     IBOutlet myView *myCustomViewObjOutlet;
@@ -17,6 +18,7 @@
     IBOutlet NSTextField *myFillFieldOutlet;
     IBOutlet NSTextField *myOutlineOutlet;
     IBOutlet NSTextField *myBackgoundOutlet;
+    IBOutlet NSTextField *myTextOutlet;
 }
 
 //@property (weak) IBOutlet NSTextField *textFeildOutlet;
@@ -28,6 +30,7 @@
 
 - (IBAction)OpenMenu:(id)sender;
 - (IBAction)SaveMenu:(id)sender;
+- (IBAction)colorWindow:(id)sender;
 
 - (IBAction)MeinMenuWindo:(id)sender;
 

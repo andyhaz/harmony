@@ -15,6 +15,7 @@
    IBOutlet id ViewControlObjectFill;
    IBOutlet id ViewControlObjectOutline;
    IBOutlet id ViewControlObjectBG;
+   IBOutlet id ViewControlObjectText;
     
     NSString *myFillString,*myOutLineString,*myBackgoundString;
     
@@ -32,6 +33,11 @@
     float myGreenBG;
     float myBlueBG;
     float myAlphaBG;
+    
+    float myRedText;
+    float myGreenText;
+    float myBlueText;
+    float myAlphaText;
 }
 
 -(void)fillColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG;
