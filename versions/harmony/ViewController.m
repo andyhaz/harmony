@@ -137,9 +137,8 @@
 }
 
 - (void)openColorWindow {
-    if (!cvc) {
-        cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
-    }
+    if (!cvc) cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
+
     [cvc showWindow:self];
     [self updateDisplay];
 }
@@ -148,7 +147,11 @@
     //    NSLog(@"hex Data:%@ colordata:%@",hexData,colorData);
     [cvc setMyColorHex:hexData];
     [cvc setMyColorData:colorData];
-    if (hexData || colorData)  [cvc showData];
+    if (hexData || colorData) {
+        [cvc showData];
+    } else {
+        [cvc close];
+    }
 }
 
 - (IBAction)SaveMenu:(id)sender; {
