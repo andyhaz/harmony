@@ -8,9 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface colorViewController : NSWindowController{
-
-}
+@interface colorViewController : NSWindowController
 
 @property (nonatomic,retain) NSMutableArray *myColorData;
 @property (nonatomic,retain) NSMutableArray *myColorHex;

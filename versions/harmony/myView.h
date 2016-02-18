@@ -26,6 +26,7 @@
     float myGreenOutline;
     float myBlueOutline;
     float myAlphaOutline;
+    float myBoarderSize;
     
     float myRedBG;
     float myGreenBG;
@@ -40,7 +41,7 @@
 
 -(NSString*)fillColor :(float)red :(float)green :(float)blue :(float)alpha;
 
--(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha;
+-(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha :(float)boarderSize;
 
 -(NSString*)bgColor :(float)red :(float)green :(float)blue :(float)alpha;
 

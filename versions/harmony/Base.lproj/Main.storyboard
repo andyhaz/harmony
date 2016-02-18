@@ -113,9 +113,9 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VLH-b9-V12"/>
-                                        <menuItem title="Color Profile " keyEquivalent="s" id="GPj-6d-6OF">
+                                        <menuItem title="Color Profile " keyEquivalent="1" id="GPj-6d-6OF">
                                             <connections>
-                                                <action selector="colorWindow:" target="Voe-Tx-rLC" id="Ib9-RN-jX6"/>
+                                                <action selector="colorWindow:" target="Ady-hI-5gd" id="nDq-sW-sl7"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="h15-SC-wVg"/>
@@ -222,7 +222,10 @@
                             </textField>
                             <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tM-lU-yuL">
                                 <rect key="frame" x="325" y="143" width="74" height="21"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="2" tickMarkPosition="above" sliderType="linear" id="7nn-vV-a0y"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="25" doubleValue="2" tickMarkPosition="above" sliderType="linear" id="7nn-vV-a0y"/>
+                                <connections>
+                                    <action selector="borderSize:" target="XfG-lQ-9wD" id="PvN-QF-qIx"/>
+                                </connections>
                             </slider>
                             <button canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VxV-DF-GPA">
                                 <rect key="frame" x="241" y="144" width="45" height="18"/>
@@ -245,20 +248,26 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="usrText:" target="XfG-lQ-9wD" id="1MA-PT-I3i"/>
+                                </connections>
                             </textField>
                             <popUpButton canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-cv-ryL">
                                 <rect key="frame" x="299" y="1" width="101" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WVk-uA-RSN" id="uii-sV-Ck3">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="uii-sV-Ck3">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="Ahp-qe-bLv">
+                                    <menu key="menu" title="9" id="Ahp-qe-bLv">
                                         <items>
-                                            <menuItem title="Item 1" state="on" id="WVk-uA-RSN"/>
-                                            <menuItem title="Item 2" id="HcR-6i-ZRh"/>
-                                            <menuItem title="Item 3" id="uJO-l4-Gk5"/>
+                                            <menuItem title="9" id="WVk-uA-RSN"/>
+                                            <menuItem title="12" id="HcR-6i-ZRh"/>
+                                            <menuItem title="18" id="uJO-l4-Gk5"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="textSize:" target="XfG-lQ-9wD" id="qYu-vK-fpV"/>
+                                </connections>
                             </popUpButton>
                             <colorWell canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-XQ-cNZ">
                                 <rect key="frame" x="353" y="88" width="44" height="23"/>
@@ -293,11 +302,13 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="borderSizeOutLine" destination="6tM-lU-yuL" id="WwI-BZ-Rlg"/>
                         <outlet property="colorWellBackground" destination="u17-3u-BL4" id="X5h-sG-LIu"/>
                         <outlet property="colorWellFill" destination="gP3-XQ-cNZ" id="x50-eD-aDW"/>
                         <outlet property="colorWellOutline" destination="MBw-6G-xnC" id="mgY-hm-ZXc"/>
                         <outlet property="colorWelltext" destination="hRl-TH-4Cw" id="l1p-jz-0Xn"/>
                         <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="fVB-Qk-wP0"/>
+                        <outlet property="usrTestOutline" destination="gza-gY-BUc" id="Goj-7U-TP3"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

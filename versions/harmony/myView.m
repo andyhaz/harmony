@@ -30,7 +30,7 @@
 }//change object color
 
 
--(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha{
+-(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha :(float)boarderSize{
   //  NSLog(@"new outline Color");
     colorUtitle *cu = [[colorUtitle alloc]init];
     
@@ -38,6 +38,7 @@
     myGreenOutline = green;
     myBlueOutline = blue;
     myAlphaOutline = alpha;
+    myBoarderSize = boarderSize;
     
     NSString *hexColor = [NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]];
     
@@ -108,7 +109,7 @@
     NSBezierPath * path;
     path = [NSBezierPath bezierPathWithRect:rect];
     
-    [path setLineWidth:3];
+    [path setLineWidth:myBoarderSize];
     
     [[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill] setFill];
     //[[NSColor whiteColor] set];

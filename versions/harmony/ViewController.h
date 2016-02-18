@@ -21,25 +21,23 @@
     IBOutlet NSTextField *myTextOutlet;
 }
 
-//@property (weak) IBOutlet NSTextField *textFeildOutlet;
-
 - (IBAction)fillColorWell:(id)pId;
 - (IBAction)outlineColorWell:(id)pId;
 - (IBAction)backgoundColorWell:(id)pId;
 - (IBAction)textColorWell:(id)pId;
 
+- (IBAction)borderSize:(id)sender;
+@property (readwrite,assign) IBOutlet NSSlider *borderSizeOutLine;
+
+- (IBAction)usrText:(id)sender;
+@property (weak) IBOutlet NSTextField *usrTestOutline;
+
+- (IBAction)textSize:(id)sender;
+
+
 - (IBAction)OpenMenu:(id)sender;
 - (IBAction)SaveMenu:(id)sender;
 - (IBAction)colorWindow:(id)sender;
-
-- (IBAction)MeinMenuWindo:(id)sender;
-
-//@property (weak) IBOutlet NSTextField *fillInfoField;
-//@property (weak) IBOutlet NSTextField *outlineInfoFieldOutlet;
-//@property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
-
-//- (IBAction)textAction:(id)sender;
-//- (IBAction)bgAction:(id)sender;
 
 @property (weak) IBOutlet NSColorWell *colorWellFill;
 @property (weak) IBOutlet NSColorWell *colorWellOutline;

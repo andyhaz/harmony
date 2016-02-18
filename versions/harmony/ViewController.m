@@ -15,25 +15,27 @@
 
 @property (retain) NSMutableArray *colorData;
 @property (retain) NSMutableArray *hexData;
+@property (nonatomic) float borderSizeData;
 
 @end
 
 @implementation ViewController
 
 @synthesize colorData,colorWellBackground,colorWellFill,colorWellOutline,colorWelltext,hexData;
+@synthesize borderSizeOutLine,usrTestOutline,borderSizeData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0",@"0.0",@"1.0",@"0.0",@"1.0", nil];
+    borderSizeData = 3.0;
+    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0",@"0.0",@"1.0",@"0.0",@"1.0",@"2.0", nil];
     NSString *fillColorHex =  [myCustomViewObjOutlet fillColor:1.0 :1.0 :1.0 :1.0];
-    NSString *objOutlineHex = [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0];
+    NSString *objOutlineHex = [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0 :borderSizeData];
     NSString *bgColorHex = [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
     NSString *textColorHex = [myCustomViewObjOutlet textColor:0.0 :1.0 :0.0 :1.0];
     
     hexData = [[NSMutableArray alloc] initWithObjects:fillColorHex,objOutlineHex,bgColorHex,textColorHex, nil ];
-    
-    [self openColorWindow];
-//    NSLog(@"myCustomViewObjOutlet:%@",fillColorHex);
+ //   NSLog(@"myCustomViewObjOutlet:%@",hexData);
+   // [self openColorWindow];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -67,12 +69,14 @@
     float myBlue = well.color.blueComponent;
     float myAlpha = well.color.alphaComponent;
     
-    NSString *ColorHex = [myCustomViewObjOutlet outlineColor:myRed :myGreen :myBlue :myAlpha];
+    NSString *ColorHex = [myCustomViewObjOutlet outlineColor:myRed :myGreen :myBlue :myAlpha :borderSizeData];
     
     [colorData replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%f",myRed]];
     [colorData replaceObjectAtIndex:5 withObject:[NSString stringWithFormat:@"%f",myGreen]];
     [colorData replaceObjectAtIndex:6 withObject:[NSString stringWithFormat:@"%f",myBlue]];
     [colorData replaceObjectAtIndex:7 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
+    [colorData replaceObjectAtIndex:16 withObject:[NSString stringWithFormat:@"%f",borderSizeData]];
+
     
     [hexData replaceObjectAtIndex:1 withObject:ColorHex];
 
@@ -115,21 +119,44 @@
     
     [self updateDisplay];
 }
-//handly menu
-- (IBAction)MeinMenuWindo:(id)sender{
-  //  NSLog(@"open mainWindow");//
-    NSWindowController *winCon = [[NSWindowController alloc] initWithWindowNibName:@"mainWindow"];
-    [winCon showWindow:self];
+
+- (IBAction)borderSize:(id)sender {
+  borderSizeData = [borderSizeOutLine intValue];
+  [myCustomViewObjOutlet outlineColor:[colorData[4] floatValue] :[colorData[5] floatValue] :[colorData[6] floatValue] :[colorData[7] floatValue] :borderSizeData];
+
+}
+
+- (IBAction)usrText:(id)sender {
 }
 //handly menu
+- (IBAction)colorWindow:(id)sender {
+   // NSLog(@"hex Data:%@ colordata:%@",hexData,colorData);
+    [self openColorWindow];
+}
+
+- (void)openColorWindow {
+    if (!cvc) {
+        cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
+    }
+    [cvc showWindow:self];
+    [self updateDisplay];
+}
+
+-(void)updateDisplay {
+    //    NSLog(@"hex Data:%@ colordata:%@",hexData,colorData);
+    [cvc setMyColorHex:hexData];
+    [cvc setMyColorData:colorData];
+    if (hexData || colorData)  [cvc showData];
+}
+
 - (IBAction)SaveMenu:(id)sender; {
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
     [lsi saveFiledata:colorData];
    // NSLog(@"save strData:%@",stringData);
 } // end
 
-- (IBAction)colorWindow:(id)sender {
-    [self openColorWindow];
+- (IBAction)textSize:(id)sender {
+    
 }
 
 - (IBAction)OpenMenu:(id)sender; {
@@ -160,12 +187,12 @@
     float myAlphaText = [[colorData objectAtIndex:15] floatValue];
     
     NSString *fillColorHex =  [myCustomViewObjOutlet fillColor:myRedFill :myGreenFill :myBlueFill :myAlphaFill];
-    NSString *objOutlineHex =  [myCustomViewObjOutlet outlineColor:myRedOutline :myGreenOutline :myBlueOutline :myAlphaOutline];
+    NSString *objOutlineHex =  [myCustomViewObjOutlet outlineColor:myRedOutline :myGreenOutline :myBlueOutline :myAlphaOutline :borderSizeData];
     NSString *bgColorHex =  [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
     NSString *textColorHex = [myCustomViewObjOutlet textColor:myRedText :myGreenText :myBlueText :myAlphaText];
     
     hexData = [[NSMutableArray alloc] initWithObjects:fillColorHex,objOutlineHex,bgColorHex,textColorHex, nil ];
-    
+
 } // end
 
 - (void)assignStringToFillField:(NSString *)pString {
@@ -197,69 +224,7 @@
 } // end assignStringToTextField
 
 - (NSString *)returnNTextField{
-    NSLog(@"text");
+//NSLog(@"text");
     return [myTextOutlet stringValue];
 }
-
-- (void)openColorWindow {
-    if (!cvc) {
-        cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
-    }
-    [cvc showWindow:self];
-    [cvc setMyColorHex:hexData];
-    [cvc setMyColorData:colorData];
-    [cvc showData];
-}
-
--(void)updateDisplay {
-    [cvc setMyColorHex:hexData];
-    [cvc setMyColorData:colorData];
-    [cvc showData];
-}
-/*
-- (IBAction)textAction:(id)sender {
-    NSString *textStr = [bgInfoFieldOutlet stringValue];
-    colorUtitle *colorUtl = [[colorUtitle alloc]init];
-    NSColor *newColor =  [colorUtl colorFromHexString:textStr];
-    NSColorWell *well = colorWellFill;
-    
-    float myRed = newColor.redComponent;
-    float myGreen = newColor.greenComponent;
-    float myBlue = newColor.blueComponent;
-    float myAlpha = newColor.alphaComponent;
-    
-    NSColor *newcolor = [NSColor colorWithCalibratedRed:myRed green:myGreen blue:myBlue alpha:myAlpha];
-    [well setColor:newcolor];
-    
-   // [myCustomViewObjOutlet textColor:myRed :myGreen :myBlue :myAlpha];
-    
-    [colorData replaceObjectAtIndex:0 withObject:[NSString stringWithFormat:@"%f",myRed]];
-    [colorData replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%f",myGreen]];
-    [colorData replaceObjectAtIndex:2 withObject:[NSString stringWithFormat:@"%f",myBlue]];
-    [colorData replaceObjectAtIndex:3 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
-  //  NSLog(@"text action:%@",newColor);
-}
-
-- (IBAction)bgAction:(id)sender {
-    NSString *textStr = [bgInfoFieldOutlet stringValue];
-    colorUtitle *colorUtl = [[colorUtitle alloc]init];
-    NSColor *newColor =  [colorUtl colorFromHexString:textStr];
-    NSColorWell *well = colorWellBackground;
-
-    float myRed = newColor.redComponent;
-    float myGreen = newColor.greenComponent;
-    float myBlue = newColor.blueComponent;
-    float myAlpha = newColor.alphaComponent;
-    
-    NSColor *newcolor = [NSColor colorWithCalibratedRed:myRed green:myGreen blue:myBlue alpha:myAlpha];
-    [well setColor:newcolor];
-    
-    [myCustomViewObjOutlet bgColor:myRed :myGreen :myBlue :myAlpha];
-    
-    [colorData replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%f",myRed]];
-    [colorData replaceObjectAtIndex:5 withObject:[NSString stringWithFormat:@"%f",myGreen]];
-    [colorData replaceObjectAtIndex:6 withObject:[NSString stringWithFormat:@"%f",myBlue]];
-    [colorData replaceObjectAtIndex:7 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
-    //NSLog(@"bg action");
-}*/
 @end
