@@ -23,6 +23,10 @@
     return(@"string from shareControl");
 }
 
+- (NSString *)returnNTextField{
+    return(@"string from shareControl");
+}
+
 - (void)assignStringToFillField:(NSString *)pString {
     NSLog(@"shareControl %@",pString);
 } // end assignStringToTextField
@@ -32,6 +36,10 @@
 } // end assignStringToTextField
 
 - (void)assignStringToBGField:(NSString *)pString {
+    NSLog(@"shareControl %@",pString);
+} // end assignStringToTextField
+
+- (void)assignStringToTextField:(NSString *)pString {
     NSLog(@"shareControl %@",pString);
 } // end assignStringToTextField
 

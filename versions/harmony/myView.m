@@ -11,13 +11,13 @@
 @implementation myView
 
 //change  color
--(void)fillColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
+-(void)fillColor :(float)red :(float)green :(float)blue :(float)alpha{
     colorUtitle *cu = [[colorUtitle alloc]init];
     
-    myRedFill = redBG;
-    myGreenFill = greenBG;
-    myBlueFill = blueBG;
-    myAlphaFill = alphaBG;
+    myRedFill = red;
+    myGreenFill = green;
+    myBlueFill = blue;
+    myAlphaFill = alpha;
     
     [ViewControlObjectFill assignStringToFillField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedFill green:myGreenFill blue:myBlueFill alpha:myAlphaFill]]]];
     
@@ -26,62 +26,59 @@
 }//change object color
 
 
--(void)outlineColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
+-(void)outlineColor :(float)red :(float)green :(float)blue :(float)alpha{
   //  NSLog(@"new outline Color");
     colorUtitle *cu = [[colorUtitle alloc]init];
     
-    myRedOutline = redBG;
-    myGreenOutline = greenBG;
-    myBlueOutline = blueBG;
-    myAlphaOutline = alphaBG;
+    myRedOutline = red;
+    myGreenOutline = green;
+    myBlueOutline = blue;
+    myAlphaOutline = alpha;
     
     [ViewControlObjectOutline assignStringToOutlineField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]]];
     
     [self setNeedsDisplay:YES];
-    NSLog(@"set outline Color");
+  //  NSLog(@"set outline Color");
 
-}//change bg color
+}//change outline color
 
--(void)outlineColorHex:(NSString*)hex{
-    
-}
-
--(void)bgColor :(float)redBG :(float)greenBG :(float)blueBG :(float)alphaBG{
+-(void)bgColor :(float)red :(float)green :(float)blue :(float)alpha {
     colorUtitle *cu = [[colorUtitle alloc]init];
 
-    myRedBG = redBG;
-    myGreenBG = greenBG;
-    myBlueBG = blueBG;
-    myAlphaBG = alphaBG;
+    myRedBG = red;
+    myGreenBG = green;
+    myBlueBG = blue;
+    myAlphaBG = alpha;
     
     [ViewControlObjectBG assignStringToBGField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG]]]];
-//[self setMyString: [myControlObj3 returnNBGField]];
     
     [self setNeedsDisplay:YES];
   
   //  NSLog(@"set backgound Color");
 }
 
-//set the string
--(void)setMyString:(NSString *)pString;
-{
-    // prevent an NSInvalidArgumentException if pString is nil.
-    if(pString) {
-        myFillString = [[NSString alloc]initWithString:	pString];
-    } else {
-        myFillString = @"";
-    } // end if
+-(void)textColor :(float)red :(float)green :(float)blue :(float)alpha{
+    colorUtitle *cu = [[colorUtitle alloc]init];
     
-}// end setMyString
+    myRedText = red;
+    myGreenText = green;
+    myBlueText = blue;
+    myAlphaText = alpha;
+    
+    NSLog(@"textColor:%f",myRedText);
+    
+    [ViewControlObjectBG assignStringToTextField:[NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]]]];
+    [self setNeedsDisplay:YES];
+}
 
 /*- (void)mouseDown:(NSEvent *)theEvent{
      NSLog(@"hello myView");
 }*/
 
 - (void)drawRect:(NSRect)dirtyRect {
+//  NSLog(@"drawRect");
     [super drawRect:dirtyRect];
 // Drawing code here.
-//  NSLog(@"drawRect");
     
 //set background color
    [[NSColor colorWithSRGBRed:myRedBG green:myGreenBG blue:myBlueBG alpha:myAlphaBG] setFill];
@@ -107,5 +104,28 @@
     [[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline] set];
    // [[NSColor grayColor] set];
     [path stroke];
+    //set color
+    
+     NSString * zString	= @"Harmony";
+     NSPoint	zPoint;
+     zPoint.x	= 30.0;
+     zPoint.y	= 50.0;
+     //setup text
+     NSFontManager *fontManager = [NSFontManager sharedFontManager];
+     NSFont *textFont = [fontManager fontWithFamily:@"Helvetica"
+     traits:NSUnboldFontMask
+     weight:0
+     size:40];
+     //set text color
+     //  NSLog(@"%f:",myRedText);
+     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+     NSMutableDictionary *zDictAttributes = [[NSMutableDictionary alloc] init];
+     [zDictAttributes setObject:textFont
+     forKey:NSFontAttributeName];
+     [zDictAttributes setObject:[NSColor colorWithSRGBRed:myRedText green:myGreenText blue:myBlueText alpha:myAlphaText]
+     forKey:NSForegroundColorAttributeName];
+     CGContextSaveGState(context);
+     
+     [zString drawAtPoint:zPoint withAttributes:zDictAttributes];
 }
 @end

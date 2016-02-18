@@ -8,6 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface colorViewController : NSWindowController
+@interface colorViewController : NSWindowController{
+    IBOutlet NSTextField *myFillFieldOutlet;
+    IBOutlet NSTextField *myOutlineOutlet;
+    IBOutlet NSTextField *myBackgoundOutlet;
+    IBOutlet NSTextField *myTextOutlet;
+}
+
+@property NSMutableArray *myData;
+
+@property (weak) IBOutlet NSTextField *fillInfoField;
+@property (weak) IBOutlet NSTextField *outlineInfoFieldOutlet;
+@property (weak) IBOutlet NSTextField *bgInfoFieldOutlet;
+@property (weak) IBOutlet NSTextField *textInfoFieldOutlint;
+
+-(void)showData;
 
 @end

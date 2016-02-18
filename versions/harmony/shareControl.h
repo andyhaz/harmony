@@ -13,9 +13,11 @@
 - (NSString *)returnNFillField;
 - (NSString *)returnNOutlineField;
 - (NSString *)returnNBGField;
+- (NSString *)returnNTextField;
 
 - (void)assignStringToFillField:(NSString *)pString;
 - (void)assignStringToOutlineField:(NSString *)pString;
 - (void)assignStringToBGField:(NSString *)pString;
+- (void)assignStringToTextField:(NSString *)pString;
 
 @end

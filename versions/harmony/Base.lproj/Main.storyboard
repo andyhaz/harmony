@@ -162,33 +162,34 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="420" height="202"/>
+                        <rect key="frame" x="0.0" y="0.0" width="410" height="193"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-r2-Kn1" customClass="myView">
+                                <rect key="frame" x="0.0" y="0.0" width="229" height="193"/>
+                                <connections>
+                                    <outlet property="ViewControlObjectBG" destination="YgC-dO-nlc" id="nA7-Hu-zNY"/>
+                                    <outlet property="ViewControlObjectFill" destination="YgC-dO-nlc" id="UbR-9P-SUk"/>
+                                    <outlet property="ViewControlObjectOutline" destination="YgC-dO-nlc" id="Jbb-dn-7Dm"/>
+                                    <outlet property="ViewControlObjectText" destination="m2S-Jp-Qdl" id="hfH-Dw-w97"/>
+                                </connections>
+                            </customView>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u17-3u-BL4">
-                                <rect key="frame" x="356" y="176" width="44" height="23"/>
+                                <rect key="frame" x="353" y="168" width="44" height="23"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="backgoundColorWell:" target="XfG-lQ-9wD" id="9uk-7K-QJO"/>
                                 </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-6G-xnC">
-                                <rect key="frame" x="356" y="122" width="44" height="23"/>
+                                <rect key="frame" x="353" y="117" width="44" height="23"/>
                                 <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="outlineColorWell:" target="XfG-lQ-9wD" id="erg-oU-YfC"/>
                                 </connections>
                             </colorWell>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-r2-Kn1" customClass="myView">
-                                <rect key="frame" x="0.0" y="9" width="229" height="193"/>
-                                <connections>
-                                    <outlet property="ViewControlObjectBG" destination="YgC-dO-nlc" id="nA7-Hu-zNY"/>
-                                    <outlet property="ViewControlObjectFill" destination="YgC-dO-nlc" id="UbR-9P-SUk"/>
-                                    <outlet property="ViewControlObjectOutline" destination="YgC-dO-nlc" id="Jbb-dn-7Dm"/>
-                                </connections>
-                            </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RfL-3f-sjV">
-                                <rect key="frame" x="295" y="95" width="61" height="17"/>
+                                <rect key="frame" x="292" y="92" width="61" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fill Color:" id="oLQ-Da-F7e">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -196,7 +197,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6as-l1-x20">
-                                <rect key="frame" x="268" y="124" width="88" height="17"/>
+                                <rect key="frame" x="265" y="119" width="88" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Outline Color:" id="Uzj-2i-MF0">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -204,7 +205,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oh-o1-Ijd">
-                                <rect key="frame" x="244" y="179" width="112" height="17"/>
+                                <rect key="frame" x="241" y="171" width="112" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Backgound Color:" id="V8z-k3-tvh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -212,41 +213,33 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vaS-4m-w4J">
-                                <rect key="frame" x="295" y="154" width="34" height="17"/>
+                                <rect key="frame" x="292" y="146" width="34" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size:" id="SDx-ny-p1q">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etX-fS-yMz">
-                                <rect key="frame" x="235" y="12" width="63" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Size:" id="3Vq-Pg-hOv">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tM-lU-yuL">
-                                <rect key="frame" x="328" y="151" width="74" height="21"/>
+                                <rect key="frame" x="325" y="143" width="74" height="21"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="7nn-vV-a0y"/>
                             </slider>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VxV-DF-GPA">
-                                <rect key="frame" x="244" y="152" width="45" height="18"/>
+                                <rect key="frame" x="241" y="144" width="45" height="18"/>
                                 <buttonCell key="cell" type="check" title="Box" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Og2-yW-wp9">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zR0-Lc-59O">
-                                <rect key="frame" x="266" y="66" width="84" height="18"/>
+                                <rect key="frame" x="263" y="61" width="84" height="18"/>
                                 <buttonCell key="cell" type="check" title="Text Color" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ao5-Sz-9Kb">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gza-gY-BUc">
-                                <rect key="frame" x="304" y="38" width="96" height="22"/>
+                                <rect key="frame" x="301" y="33" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Harmony" drawsBackground="YES" id="biC-49-ZUH">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -254,7 +247,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-cv-ryL">
-                                <rect key="frame" x="295" y="6" width="108" height="26"/>
+                                <rect key="frame" x="299" y="1" width="101" height="26"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WVk-uA-RSN" id="uii-sV-Ck3">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -268,7 +261,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKU-fv-rca">
-                                <rect key="frame" x="264" y="42" width="34" height="17"/>
+                                <rect key="frame" x="261" y="37" width="34" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text:" id="5Ix-vr-fhW">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -276,29 +269,41 @@
                                 </textFieldCell>
                             </textField>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-XQ-cNZ">
-                                <rect key="frame" x="356" y="91" width="44" height="23"/>
+                                <rect key="frame" x="353" y="88" width="44" height="23"/>
                                 <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="fillColorWell:" target="XfG-lQ-9wD" id="eCF-RI-oB5"/>
                                 </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-TH-4Cw">
-                                <rect key="frame" x="356" y="64" width="44" height="23"/>
+                                <rect key="frame" x="353" y="59" width="44" height="23"/>
                                 <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="textColorWell:" target="XfG-lQ-9wD" id="aks-3M-y0s"/>
+                                </connections>
                             </colorWell>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etX-fS-yMz">
+                                <rect key="frame" x="241" y="7" width="63" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Size:" id="3Vq-Pg-hOv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="colorWellBackground" destination="u17-3u-BL4" id="X5h-sG-LIu"/>
                         <outlet property="colorWellFill" destination="gP3-XQ-cNZ" id="x50-eD-aDW"/>
                         <outlet property="colorWellOutline" destination="MBw-6G-xnC" id="mgY-hm-ZXc"/>
+                        <outlet property="colorWelltext" destination="hRl-TH-4Cw" id="l1p-jz-0Xn"/>
                         <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="fVB-Qk-wP0"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="YgC-dO-nlc" customClass="ViewController"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="599"/>
+            <point key="canvasLocation" x="-24" y="564.5"/>
         </scene>
     </scenes>
 </document>

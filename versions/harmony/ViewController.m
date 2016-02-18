@@ -23,17 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0", nil];
+    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0",@"0.0",@"1.0",@"0.0",@"1.0", nil];
     [myCustomViewObjOutlet fillColor:1.0 :1.0 :1.0 :1.0];
     [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0];
     [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
+    [myCustomViewObjOutlet textColor:0.0 :1.0 :0.0 :1.0];
+    
     
     [self openColorWindow];
+  //  cvc = [[colorViewController alloc] init];
+    [cvc setMyData:colorData];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
     // Update the view, if already loaded.
 }
 
@@ -84,6 +87,20 @@
     [colorData replaceObjectAtIndex:11 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
     //NSLog(@"new bg Color:%@",colorWell3.color);
 }
+- (IBAction)textColorWell:(id)pId{
+    NSColorWell *well = colorWellBackground;
+    float myRed = well.color.redComponent;
+    float myGreen = well.color.greenComponent;
+    float myBlue = well.color.blueComponent;
+    float myAlpha = well.color.alphaComponent;
+    
+    [myCustomViewObjOutlet textColor:myRed :myGreen :myBlue :myAlpha];
+    
+    [colorData replaceObjectAtIndex:12 withObject:[NSString stringWithFormat:@"%f",myRed]];
+    [colorData replaceObjectAtIndex:13 withObject:[NSString stringWithFormat:@"%f",myGreen]];
+    [colorData replaceObjectAtIndex:14 withObject:[NSString stringWithFormat:@"%f",myBlue]];
+    [colorData replaceObjectAtIndex:15 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
+}
 //handly menu
 - (IBAction)MeinMenuWindo:(id)sender{
   //  NSLog(@"open mainWindow");//
@@ -98,7 +115,7 @@
 } // end
 
 - (IBAction)colorWindow:(id)sender {
-    
+    [self openColorWindow];
 }
 
 - (IBAction)OpenMenu:(id)sender; {
@@ -130,7 +147,6 @@
 
 - (void)assignStringToFillField:(NSString *)pString {
     [colorData addObject:pString];
-    [myFillFieldOutlet setStringValue:pString];
 }//end assignStringToTextField
 
 - (NSString *)returnNFillField {
@@ -139,7 +155,6 @@
 
 - (void)assignStringToOutlineField:(NSString *)pString{
     [colorData addObject:pString];
-    [myOutlineOutlet setStringValue:pString];
 }
 
 - (NSString *)returnNOutlineField{
@@ -147,20 +162,31 @@
 }
 //
 - (void)assignStringToBGField:(NSString *)pString {
-    [myBackgoundOutlet setStringValue:pString];
+    [colorData addObject:pString];
 }//end assignStringToTextField
 
 - (NSString *)returnNBGField {
     return  [myBackgoundOutlet stringValue];
 }//end returnNTextField
 
+- (void)assignStringToTextField:(NSString *)pString {
+    [colorData addObject:pString];
+} // end assignStringToTextField
+
+- (NSString *)returnNTextField{
+    NSLog(@"text");
+    return [myTextOutlet stringValue];
+}
+
 - (void)openColorWindow {
     if (!cvc) {
+        [cvc setMyData:colorData];
         cvc = [[colorViewController alloc] initWithWindowNibName:@"colorViewController"];
     }
     [cvc showWindow:self];
+ //   [cvc showData];
 }
-
+/*
 - (IBAction)textAction:(id)sender {
     NSString *textStr = [bgInfoFieldOutlet stringValue];
     colorUtitle *colorUtl = [[colorUtitle alloc]init];
@@ -205,5 +231,5 @@
     [colorData replaceObjectAtIndex:6 withObject:[NSString stringWithFormat:@"%f",myBlue]];
     [colorData replaceObjectAtIndex:7 withObject:[NSString stringWithFormat:@"%f",myAlpha]];
     //NSLog(@"bg action");
-}
+}*/
 @end
