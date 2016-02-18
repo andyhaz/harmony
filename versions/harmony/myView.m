@@ -10,6 +10,8 @@
 
 @implementation myView
 
+@synthesize boarderSize = _boarderSize;
+
 //change  color
 -(NSString*)fillColor :(float)red :(float)green :(float)blue :(float)alpha{
     colorUtitle *cu = [[colorUtitle alloc]init];
@@ -29,8 +31,22 @@
 //NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 }//change object color
 
+-(void)BorderSize :(float)Size{
+    myBoarderSize = Size;
+    [self setNeedsDisplay:YES];
+}
 
--(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha :(float)boarderSize{
+-(void)usrText :(NSString*)Text{
+    myText = Text;
+    [self setNeedsDisplay:YES];
+}
+
+-(void)textSize :(float)Size{
+    mySize  = Size;
+    [self setNeedsDisplay:YES];
+}
+
+-(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha {
   //  NSLog(@"new outline Color");
     colorUtitle *cu = [[colorUtitle alloc]init];
     
@@ -38,7 +54,7 @@
     myGreenOutline = green;
     myBlueOutline = blue;
     myAlphaOutline = alpha;
-    myBoarderSize = boarderSize;
+    myBoarderSize = _boarderSize;
     
     NSString *hexColor = [NSString stringWithFormat:@"#%@",[cu getHexStringForColor:[NSColor colorWithSRGBRed:myRedOutline green:myGreenOutline blue:myBlueOutline alpha:myAlphaOutline]]];
     
@@ -120,7 +136,7 @@
     [path stroke];
     //set color
     
-     NSString * zString	= @"Harmony";
+     NSString * zString	= myText;
      NSPoint	zPoint;
      zPoint.x	= 30.0;
      zPoint.y	= 50.0;

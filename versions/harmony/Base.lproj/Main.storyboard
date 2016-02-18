@@ -222,7 +222,7 @@
                             </textField>
                             <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tM-lU-yuL">
                                 <rect key="frame" x="325" y="143" width="74" height="21"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="25" doubleValue="2" tickMarkPosition="above" sliderType="linear" id="7nn-vV-a0y"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="25" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="7nn-vV-a0y"/>
                                 <connections>
                                     <action selector="borderSize:" target="XfG-lQ-9wD" id="PvN-QF-qIx"/>
                                 </connections>
@@ -243,7 +243,7 @@
                             </button>
                             <textField canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gza-gY-BUc">
                                 <rect key="frame" x="301" y="33" width="96" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Harmony" drawsBackground="YES" id="biC-49-ZUH">
+                                <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="Harmony" drawsBackground="YES" usesSingleLineMode="YES" id="biC-49-ZUH">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

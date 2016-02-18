@@ -27,15 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     borderSizeData = 3.0;
-    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0",@"0.0",@"1.0",@"0.0",@"1.0",@"2.0", nil];
+    
+    colorData = [[NSMutableArray alloc] initWithObjects:@"1.0",@"1.0",@"1.0",@"1.0",@"1.0",@"0.0",@"0.0",@"1.0",@"0.0",@"0.0",@"0.0",@"1.0",@"0.0",@"1.0",@"0.0",@"1.0", nil];
     NSString *fillColorHex =  [myCustomViewObjOutlet fillColor:1.0 :1.0 :1.0 :1.0];
-    NSString *objOutlineHex = [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0 :borderSizeData];
+    NSString *objOutlineHex = [myCustomViewObjOutlet outlineColor:0.0 :0.0 :1.0 :1.0];
     NSString *bgColorHex = [myCustomViewObjOutlet bgColor:0.0 :0.0 :0.0 :1.0];
     NSString *textColorHex = [myCustomViewObjOutlet textColor:0.0 :1.0 :0.0 :1.0];
     
     hexData = [[NSMutableArray alloc] initWithObjects:fillColorHex,objOutlineHex,bgColorHex,textColorHex, nil ];
- //   NSLog(@"myCustomViewObjOutlet:%@",hexData);
-   // [self openColorWindow];
+   
+    [myCustomViewObjOutlet usrText:@"Harmony"];
+
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -69,7 +71,7 @@
     float myBlue = well.color.blueComponent;
     float myAlpha = well.color.alphaComponent;
     
-    NSString *ColorHex = [myCustomViewObjOutlet outlineColor:myRed :myGreen :myBlue :myAlpha :borderSizeData];
+    NSString *ColorHex = [myCustomViewObjOutlet outlineColor:myRed :myGreen :myBlue :myAlpha];
     
     [colorData replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%f",myRed]];
     [colorData replaceObjectAtIndex:5 withObject:[NSString stringWithFormat:@"%f",myGreen]];
@@ -122,11 +124,11 @@
 
 - (IBAction)borderSize:(id)sender {
   borderSizeData = [borderSizeOutLine intValue];
-  [myCustomViewObjOutlet outlineColor:[colorData[4] floatValue] :[colorData[5] floatValue] :[colorData[6] floatValue] :[colorData[7] floatValue] :borderSizeData];
-
+  [myCustomViewObjOutlet BorderSize:borderSizeData];
 }
 
 - (IBAction)usrText:(id)sender {
+    [myCustomViewObjOutlet usrText:[usrTestOutline stringValue]];
 }
 //handly menu
 - (IBAction)colorWindow:(id)sender {
@@ -187,7 +189,7 @@
     float myAlphaText = [[colorData objectAtIndex:15] floatValue];
     
     NSString *fillColorHex =  [myCustomViewObjOutlet fillColor:myRedFill :myGreenFill :myBlueFill :myAlphaFill];
-    NSString *objOutlineHex =  [myCustomViewObjOutlet outlineColor:myRedOutline :myGreenOutline :myBlueOutline :myAlphaOutline :borderSizeData];
+    NSString *objOutlineHex =  [myCustomViewObjOutlet outlineColor:myRedOutline :myGreenOutline :myBlueOutline :myAlphaOutline];
     NSString *bgColorHex =  [myCustomViewObjOutlet bgColor:myRedBG :myGreenBG :myBlueBG :myAlphaBG];
     NSString *textColorHex = [myCustomViewObjOutlet textColor:myRedText :myGreenText :myBlueText :myAlphaText];
     

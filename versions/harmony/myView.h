@@ -37,14 +37,25 @@
     float myGreenText;
     float myBlueText;
     float myAlphaText;
+    
+    NSString *myText;
+    float mySize;
 }
+
+@property (nonatomic) float boarderSize;
 
 -(NSString*)fillColor :(float)red :(float)green :(float)blue :(float)alpha;
 
--(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha :(float)boarderSize;
+-(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha;
 
 -(NSString*)bgColor :(float)red :(float)green :(float)blue :(float)alpha;
 
 -(NSString*)textColor :(float)red :(float)green :(float)blue :(float)alpha;
+
+-(void)BorderSize :(float)mySize;
+
+-(void)usrText :(NSString*)Text;
+
+-(void)textSize :(float)Size;
 
 @end
