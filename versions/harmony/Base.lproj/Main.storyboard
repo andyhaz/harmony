@@ -264,13 +264,13 @@
                                 </connections>
                             </textField>
                             <popUpButton canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-cv-ryL">
-                                <rect key="frame" x="298" y="1" width="102" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="9" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="uii-sV-Ck3">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <rect key="frame" x="299" y="1" width="101" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="9" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="WVk-uA-RSN" id="uii-sV-Ck3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" title="Text Size" autoenablesItems="NO" id="Ahp-qe-bLv">
+                                    <menu key="menu" title="Text Size" id="Ahp-qe-bLv">
                                         <items>
-                                            <menuItem title="9" hidden="YES" id="WVk-uA-RSN"/>
+                                            <menuItem title="9" state="on" id="WVk-uA-RSN"/>
                                             <menuItem title="12" id="HcR-6i-ZRh"/>
                                             <menuItem title="14" id="uJO-l4-Gk5"/>
                                             <menuItem title="18" id="3l0-q0-oF7"/>
