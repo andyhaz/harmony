@@ -52,9 +52,8 @@
 
 -(NSString*)convertColor :(NSString*)strColor{
     float colorNum = [strColor floatValue];
-    float newColor = colorNum*255;
-    
-    return [NSString stringWithFormat:@"%f",newColor];
+  //  float newColor = colorNum*255;
+    return [NSString stringWithFormat:@"%f",colorNum];
 }
 
 @end

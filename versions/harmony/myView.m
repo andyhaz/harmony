@@ -128,12 +128,12 @@
     NSRectFill( dirtyRect);
     
 //set box and out line color
-    NSPoint origin = { 65,15 };
+    NSPoint origin = { 45,35 };
     
     NSRect rect;
     rect.origin = origin;
-    rect.size.width  = 100;
-    rect.size.height = 100;
+    rect.size.width  = 130;
+    rect.size.height = 130;
     
     NSBezierPath * path;
     if (myBoxToggle == true) path = [NSBezierPath bezierPathWithRect:rect];
@@ -151,8 +151,8 @@
     
      NSString * zString	= myText;
      NSPoint	zPoint;
-     zPoint.x	= 30.0;
-     zPoint.y	= 50.0;
+     zPoint.x	= 50.0;
+     zPoint.y	= 85.0;
      //setup text
      NSFontManager *fontManager = [NSFontManager sharedFontManager];
      NSFont *textFont = [fontManager fontWithFamily:@"Helvetica"
