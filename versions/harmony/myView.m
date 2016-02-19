@@ -12,6 +12,33 @@
 
 @synthesize boarderSize = _boarderSize;
 
+
+-(void)textON :(BOOL)toggle{
+    myTextToggle = toggle;
+    [self setNeedsDisplay:YES];
+}
+
+-(void)boxOn :(BOOL)toggle{
+    myBoxToggle = toggle;
+    [self setNeedsDisplay:YES];
+}
+
+
+-(void)BorderSize :(float)Size{
+    myBoarderSize = Size;
+    [self setNeedsDisplay:YES];
+}
+
+-(void)usrText :(NSString*)Text{
+    myText = Text;
+    [self setNeedsDisplay:YES];
+}
+
+-(void)textSize :(float)Size{
+    mySize  = Size;
+    [self setNeedsDisplay:YES];
+}
+
 //change  color
 -(NSString*)fillColor :(float)red :(float)green :(float)blue :(float)alpha{
     colorUtitle *cu = [[colorUtitle alloc]init];
@@ -31,20 +58,6 @@
 //NSLog(@"set fill Color:%f,%f,%f",myRedFill,myGreenFill,myBlueFill);
 }//change object color
 
--(void)BorderSize :(float)Size{
-    myBoarderSize = Size;
-    [self setNeedsDisplay:YES];
-}
-
--(void)usrText :(NSString*)Text{
-    myText = Text;
-    [self setNeedsDisplay:YES];
-}
-
--(void)textSize :(float)Size{
-    mySize  = Size;
-    [self setNeedsDisplay:YES];
-}
 
 -(NSString*)outlineColor :(float)red :(float)green :(float)blue :(float)alpha {
   //  NSLog(@"new outline Color");
@@ -123,7 +136,7 @@
     rect.size.height = 100;
     
     NSBezierPath * path;
-    path = [NSBezierPath bezierPathWithRect:rect];
+    if (myBoxToggle == true) path = [NSBezierPath bezierPathWithRect:rect];
     
     [path setLineWidth:myBoarderSize];
     
@@ -147,7 +160,6 @@
      weight:0
      size:mySize];
      //set text color
-     //  NSLog(@"%f:",myRedText);
      CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
      NSMutableDictionary *zDictAttributes = [[NSMutableDictionary alloc] init];
      [zDictAttributes setObject:textFont
@@ -156,6 +168,6 @@
      forKey:NSForegroundColorAttributeName];
      CGContextSaveGState(context);
      
-     [zString drawAtPoint:zPoint withAttributes:zDictAttributes];
+    if (myTextToggle == true) [zString drawAtPoint:zPoint withAttributes:zDictAttributes];
 }
 @end

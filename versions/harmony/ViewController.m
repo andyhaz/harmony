@@ -28,12 +28,12 @@
 
 @synthesize colorData,colorWellBackground,colorWellFill,colorWellOutline,colorWelltext,hexData;
 @synthesize configData,borderSizeOutLine,usrTestOutline,borderSizeData,textSize;
-@synthesize boxShow,textShow,textFeildData;
+@synthesize boxShow,textShow,textFeildData,boxToggleOutlet,textToggleOutlet;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     borderSizeData = 3.0;
-    textSize = 9;
+    textSize = 29;
     boxShow = true;
     textShow = true;
     textFeildData = @"Harmony";
@@ -48,9 +48,15 @@
     NSString *textColorHex = [myCustomViewObjOutlet textColor:0.0 :1.0 :0.0 :1.0];
     
     hexData = [[NSMutableArray alloc] initWithObjects:fillColorHex,objOutlineHex,bgColorHex,textColorHex, nil ];
-   
-    [myCustomViewObjOutlet usrText:@"Harmony"];
-
+    
+   //set up costom and chagne ui
+    [myCustomViewObjOutlet boxOn:boxShow];
+    [myCustomViewObjOutlet textON:textShow];
+    [myCustomViewObjOutlet BorderSize:borderSizeData];
+    [myCustomViewObjOutlet usrText:textFeildData];
+    [myCustomViewObjOutlet textSize:textSize];
+    [textsizeOutlet setTitle:[[NSNumber numberWithFloat:textSize] stringValue]];
+    borderSizeOutLine.doubleValue = borderSizeData;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -134,6 +140,13 @@
     
     [self updateDisplay];
 }
+//   boxShow = true; textShow = true;
+- (IBAction)boxToggleAction:(id)sender {
+    //NSLog(@"box toggle:%ld",[sender state]);
+    boxShow = [sender state];
+    [configData replaceObjectAtIndex:3 withObject:[NSNumber numberWithBool:boxShow]];
+    [myCustomViewObjOutlet boxOn:boxShow];
+}
 
 - (IBAction)borderSize:(id)sender {
   borderSizeData = [borderSizeOutLine floatValue];
@@ -148,11 +161,18 @@
 }
 
 - (IBAction)textSize:(id)sender {
-    NSLog(@"new size:%@",[[sender selectedItem] title]);
+    //NSLog(@"new size:%@",[[sender selectedItem] title]);
     NSString *ts = [[sender selectedItem] title];
     textSize = [ts floatValue];
     [configData replaceObjectAtIndex:4 withObject:[NSNumber numberWithFloat:textSize]];
     [myCustomViewObjOutlet textSize:textSize];
+}
+
+- (IBAction)textToggleAction:(id)sender {
+    textShow = [sender state];
+    [configData replaceObjectAtIndex:3 withObject:[NSNumber numberWithBool:textShow]];
+    [myCustomViewObjOutlet textON:textShow];
+
 }
 
 //handly menu
@@ -180,11 +200,10 @@
 
 - (IBAction)SaveMenu:(id)sender; {
     LoadSaveInterface *lsi = [[LoadSaveInterface alloc]init];
-    [lsi saveFiledata:colorData];
-   // NSLog(@"save strData:%@",stringData);
+    NSArray *saveData = [NSArray arrayWithObjects:configData,colorData, nil];
+    [lsi saveFiledata:saveData];
+   // NSLog(@"save strData:%@",saveData);
 } // end
-
-
 
 - (IBAction)OpenMenu:(id)sender; {
   //  NSLog(@"openMenu");
@@ -219,7 +238,20 @@
     NSString *textColorHex = [myCustomViewObjOutlet textColor:myRedText :myGreenText :myBlueText :myAlphaText];
     
     hexData = [[NSMutableArray alloc] initWithObjects:fillColorHex,objOutlineHex,bgColorHex,textColorHex, nil ];
+    
+    borderSizeData = [[colorData objectAtIndex:0] floatValue];
+    textSize = [[colorData objectAtIndex:1] floatValue];
+    boxShow = [[colorData objectAtIndex:2] boolValue];
+    textShow = [[colorData objectAtIndex:3] boolValue];
+    textFeildData = [[colorData objectAtIndex:4] stringValue];
 
+    [myCustomViewObjOutlet boxOn:boxShow];
+    [myCustomViewObjOutlet textON:textShow];
+    [myCustomViewObjOutlet BorderSize:borderSizeData];
+    [myCustomViewObjOutlet usrText:textFeildData];
+    [myCustomViewObjOutlet textSize:textSize];
+    [textsizeOutlet setTitle:[[NSNumber numberWithFloat:textSize] stringValue]];
+    borderSizeOutLine.doubleValue = borderSizeData;
 } // end
 
 - (void)assignStringToFillField:(NSString *)pString {

@@ -14,7 +14,8 @@
 
 @interface ViewController : NSViewController {    
     IBOutlet myView *myCustomViewObjOutlet;
-
+    IBOutlet NSPopUpButton *textsizeOutlet;
+    
     IBOutlet NSTextField *myFillFieldOutlet;
     IBOutlet NSTextField *myOutlineOutlet;
     IBOutlet NSTextField *myBackgoundOutlet;
@@ -33,6 +34,12 @@
 @property (weak) IBOutlet NSTextField *usrTestOutline;
 
 - (IBAction)textSize:(id)sender;
+
+- (IBAction)boxToggleAction:(id)sender;
+@property (weak) IBOutlet NSButton *boxToggleOutlet;
+
+- (IBAction)textToggleAction:(id)sender;
+@property (weak) IBOutlet NSButton *textToggleOutlet;
 
 
 - (IBAction)OpenMenu:(id)sender;

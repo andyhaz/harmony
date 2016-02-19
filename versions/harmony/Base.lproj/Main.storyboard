@@ -238,6 +238,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="boxToggleAction:" target="XfG-lQ-9wD" id="OxF-6V-G8Q"/>
+                                </connections>
                             </button>
                             <button canDrawConcurrently="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zR0-Lc-59O">
                                 <rect key="frame" x="263" y="61" width="88" height="18"/>
@@ -245,6 +248,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="textToggleAction:" target="XfG-lQ-9wD" id="O5O-4x-8p1"/>
+                                </connections>
                             </button>
                             <textField canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gza-gY-BUc">
                                 <rect key="frame" x="301" y="33" width="96" height="22"/>
@@ -258,14 +264,14 @@
                                 </connections>
                             </textField>
                             <popUpButton canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-cv-ryL">
-                                <rect key="frame" x="299" y="1" width="101" height="26"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="uii-sV-Ck3">
+                                <rect key="frame" x="298" y="1" width="102" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="9" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="uii-sV-Ck3">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" title="9" id="Ahp-qe-bLv">
+                                    <menu key="menu" title="Text Size" autoenablesItems="NO" id="Ahp-qe-bLv">
                                         <items>
-                                            <menuItem title="9" id="WVk-uA-RSN"/>
-                                            <menuItem title="12" state="on" id="HcR-6i-ZRh"/>
+                                            <menuItem title="9" hidden="YES" id="WVk-uA-RSN"/>
+                                            <menuItem title="12" id="HcR-6i-ZRh"/>
                                             <menuItem title="14" id="uJO-l4-Gk5"/>
                                             <menuItem title="18" id="3l0-q0-oF7"/>
                                             <menuItem title="24" id="cPv-wR-enF"/>
@@ -314,11 +320,14 @@
                     </view>
                     <connections>
                         <outlet property="borderSizeOutLine" destination="6tM-lU-yuL" id="WwI-BZ-Rlg"/>
+                        <outlet property="boxToggleOutlet" destination="VxV-DF-GPA" id="aYH-rB-C8F"/>
                         <outlet property="colorWellBackground" destination="u17-3u-BL4" id="X5h-sG-LIu"/>
                         <outlet property="colorWellFill" destination="gP3-XQ-cNZ" id="x50-eD-aDW"/>
                         <outlet property="colorWellOutline" destination="MBw-6G-xnC" id="mgY-hm-ZXc"/>
                         <outlet property="colorWelltext" destination="hRl-TH-4Cw" id="l1p-jz-0Xn"/>
                         <outlet property="myCustomViewObjOutlet" destination="o49-r2-Kn1" id="fVB-Qk-wP0"/>
+                        <outlet property="textToggleOutlet" destination="zR0-Lc-59O" id="Aq5-Bp-GOP"/>
+                        <outlet property="textsizeOutlet" destination="3yo-cv-ryL" id="1fD-OA-TS6"/>
                         <outlet property="usrTestOutline" destination="gza-gY-BUc" id="Goj-7U-TP3"/>
                     </connections>
                 </viewController>

@@ -40,6 +40,9 @@
     
     NSString *myText;
     float mySize;
+    
+    BOOL myTextToggle;
+    BOOL myBoxToggle;
 }
 
 @property (nonatomic) float boarderSize;
@@ -57,5 +60,9 @@
 -(void)usrText :(NSString*)Text;
 
 -(void)textSize :(float)Size;
+
+-(void)textON :(BOOL)toggle;
+-(void)boxOn :(BOOL)toggle;
+
 
 @end
